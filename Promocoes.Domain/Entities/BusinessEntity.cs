@@ -7,12 +7,13 @@ namespace Promocoes.Domain.Entities
 {
     public class BusinessEntity : BaseEntity, IValidate
     {
-        public BusinessEntity(string name, string description, string logo, string location, Contacts contact,
+        public BusinessEntity(string name, string password, string description, string logo, string location, Contacts contact,
          ECategory category, string operation, string geoData, bool isAdmin)
         {
 
             IdBusiness = Guid.NewGuid().ToString();
             Name = name;
+            Password = password;
             Description = description;
             Logo = logo;
             Location = location;
@@ -25,6 +26,7 @@ namespace Promocoes.Domain.Entities
 
         public string IdBusiness { get; private set; }
         public string Name { get; private set; }
+        public string Password { get; private set; }
         public string Description { get; private set; }
         public string Logo { get; private set; }
         public string Location { get; private set; }
@@ -38,7 +40,7 @@ namespace Promocoes.Domain.Entities
         public bool IsValid()
         {
             return new BusinessValidations(this).GuidIsValid()
-                .NameLenght()
+                .NameLength()
                 .DescriptionLenght()
                 .EmailIsValid()
                 .NumberIsValid()

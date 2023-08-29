@@ -26,7 +26,7 @@ namespace Promocoes.Domain.Validations
             return this;
         }
 
-        public BusinessValidations NameLenght()
+        public BusinessValidations NameLength()
         {
             if(_business.Name.Length <= 3)
                 _business.AddNotification(new Notification("Name", 
