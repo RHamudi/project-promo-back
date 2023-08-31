@@ -1,15 +1,11 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using MediatR;
 using Promocoes.Application.Input.Commands.PromotionsContext;
-using Promocoes.Application.Input.Receivers.Interfaces;
 
 namespace Promocoes.Application.Input.Receivers.PromotionsReceiver
 {
-    public class Insert : IReceiver<PromotionsCommand, State>
+    public class Insert : IRequestHandler<PromotionsCommand, State>
     {
-        public State Action(PromotionsCommand command)
+        public Task<State> Handle(PromotionsCommand request, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }

@@ -1,11 +1,11 @@
+using MediatR;
 using Promocoes.Application.Input.Commands.ProductContext;
-using Promocoes.Application.Input.Receivers.Interfaces;
 
 namespace Promocoes.Application.Input.Receivers.ProductReceiver
 {
-    public class Insert : IReceiver<ProductCommand, State>
+    public class Insert : IRequestHandler<ProductCommand, State>
     {
-        public State Action(ProductCommand command)
+        public Task<State> Handle(ProductCommand request, CancellationToken cancellationToken)
         {
             throw new NotImplementedException();
         }
