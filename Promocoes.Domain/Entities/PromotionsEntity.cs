@@ -9,13 +9,13 @@ namespace Promocoes.Domain.Entities
 {
     public class PromotionsEntity : BaseEntity, IValidate
     {
-        public PromotionsEntity(string idPromotion, string idBusiness, string idProduct, DateTime sartDate,
+        public PromotionsEntity(string idPromotion, string idBusiness, string idProduct, DateTime startDate,
             DateTime endDate, double prevPrice, double discountedPrice)
         {
             IdPromotion = idPromotion;
             IdBusiness = idBusiness;
             IdProduct = idProduct;
-            SartDate = sartDate;
+            StartDate = startDate;
             EndDate = endDate;
             PrevPrice = prevPrice;
             DiscountedPrice = discountedPrice;
@@ -25,7 +25,7 @@ namespace Promocoes.Domain.Entities
         public string IdPromotion { get; private set; }
         public string IdBusiness { get; private set; }
         public string IdProduct { get; private set; }
-        public DateTime SartDate { get; private set; }
+        public DateTime StartDate { get; private set; }
         public DateTime EndDate { get; private set; }
         public double PrevPrice { get; private set; }
         public double DiscountedPrice { get; private set; }
