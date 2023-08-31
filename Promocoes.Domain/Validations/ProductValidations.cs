@@ -19,7 +19,7 @@ namespace Promocoes.Domain.Validations
 
         public ProductValidations GuidIsValid()
         {
-            if(!Guid.TryParse(_product.IdProduct, out Guid x))
+            if(!Guid.TryParse(_product.IdBusiness, out Guid x))
                 _product.AddNotification(new Notification("IdProduct", "Id invalido"));
 
             return this;

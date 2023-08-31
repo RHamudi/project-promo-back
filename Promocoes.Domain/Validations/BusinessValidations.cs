@@ -54,7 +54,7 @@ namespace Promocoes.Domain.Validations
 
         public BusinessValidations EmailIsValid()
         {
-            if(!Regex.IsMatch(_business.Contact.Email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
+            if(!Regex.IsMatch(_business.Contacts.Email, @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"))
                 _business.AddNotification(new Notification("Email", "Insira um email valido"));
 
             return this;
@@ -62,7 +62,7 @@ namespace Promocoes.Domain.Validations
 
         public BusinessValidations NumberIsValid()
         {
-            if(!Regex.IsMatch(_business.Contact.Number, @"^\(\d{2}\) \d{4}-\d{4}$"))
+            if(!Regex.IsMatch(_business.Contacts.Number, @"^\(\d{2}\) \d{4}-\d{4}$"))
                 _business.AddNotification(new Notification("Number", "Insira um numero valido"));
 
             return this;
