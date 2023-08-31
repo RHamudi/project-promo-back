@@ -1,10 +1,11 @@
-using Promocoes.Application.Input.Commands.Interfaces;
+using MediatR;
+using Promocoes.Application.Input.Receivers;
 using Promocoes.Domain.Enums;
 using Promocoes.Domain.ValueObjects;
 
 namespace Promocoes.Application.Input.Commands.BusinessContext
 {
-    public class BusinessCommand : ICommand
+    public class BusinessCommand : IRequest<State>
     {
         public string Name { get; private set; }
         public string Password { get; private set; }

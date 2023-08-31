@@ -1,8 +1,9 @@
-using Promocoes.Application.Input.Commands.Interfaces;
+using MediatR;
+using Promocoes.Application.Input.Receivers;
 
 namespace Promocoes.Application.Input.Commands.PromotionsContext
 {
-    public class PromotionsCommand : ICommand
+    public class PromotionsCommand : IRequest<State>
     {
         public string IdBusiness { get; private set; }
         public string IdProduct { get; private set; }
