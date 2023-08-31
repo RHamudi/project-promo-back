@@ -7,7 +7,7 @@ namespace Promocoes.Domain.Entities
 {
     public class BusinessEntity : BaseEntity, IValidate
     {
-        public BusinessEntity(string name, string password, string description, string logo, string location, Contacts contact,
+        public BusinessEntity(string name, string password, string description, string logo, string location, Contacts contacts,
          ECategory category, string operation, string geoData, bool isAdmin)
         {
 
@@ -17,7 +17,7 @@ namespace Promocoes.Domain.Entities
             Description = description;
             Logo = logo;
             Location = location;
-            Contact = contact;
+            Contacts = contacts;
             Category = category;
             Operation = operation;
             GeoData = geoData;
@@ -30,7 +30,7 @@ namespace Promocoes.Domain.Entities
         public string Description { get; private set; }
         public string Logo { get; private set; }
         public string Location { get; private set; }
-        public Contacts Contact { get; private set; }
+        public Contacts Contacts { get; private set; }
         public ECategory Category { get; set; }
         public string Operation { get; private set; }
         public string GeoData { get; private set; }
