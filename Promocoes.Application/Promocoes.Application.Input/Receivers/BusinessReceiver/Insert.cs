@@ -1,4 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
 using MediatR;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Repositories.Interfaces;
