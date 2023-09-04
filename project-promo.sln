@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promocoes.Infrastructure.Ou
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promocoes.Infrastructure.Shared", "Promocoes.Infrastructure\Promocoes.Infrastructure.Shared\Promocoes.Infrastructure.Shared.csproj", "{688A7337-FE78-4DD6-AEBD-36625A1731C3}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Promocoes.API", "Promocoes.API\Promocoes.API.csproj", "{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{688A7337-FE78-4DD6-AEBD-36625A1731C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{688A7337-FE78-4DD6-AEBD-36625A1731C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{688A7337-FE78-4DD6-AEBD-36625A1731C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{285E4318-2CF6-48E0-8BB6-1C5DAD247043} = {CFB6322F-8C8C-4D65-8C17-78B42CF38F45}
