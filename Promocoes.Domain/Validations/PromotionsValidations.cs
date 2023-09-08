@@ -19,8 +19,22 @@ namespace Promocoes.Domain.Validations
 
         public PromotionsValidations GuidIsValid()
         {
+            if(!Guid.TryParse(_promotions.IdPromotion, out Guid x))
+                _promotions.AddNotification(new Notification("IdPromotion", "Id invalido"));
+
+            return this;
+        }
+        public PromotionsValidations GuidProductIsValid()
+        {
             if(!Guid.TryParse(_promotions.IdProduct, out Guid x))
                 _promotions.AddNotification(new Notification("IdProduct", "Id invalido"));
+
+            return this;
+        }
+        public PromotionsValidations GuidBusinessIsValid()
+        {
+            if(!Guid.TryParse(_promotions.IdBusiness, out Guid x))
+                _promotions.AddNotification(new Notification("IdBusiness", "Id invalido"));
 
             return this;
         }
