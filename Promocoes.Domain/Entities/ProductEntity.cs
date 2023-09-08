@@ -9,8 +9,7 @@ namespace Promocoes.Domain.Entities
 {
     public class ProductEntity : BaseEntity, IValidate
     {
-        public ProductEntity(string idBusiness ,string name, string description, string images, double price,
-            string duration)
+        public ProductEntity(string idBusiness ,string name, string description, string images, double price)
         {
             IdProduct = Guid.NewGuid().ToString();
             IdBusiness = idBusiness;

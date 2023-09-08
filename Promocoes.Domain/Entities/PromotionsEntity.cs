@@ -9,10 +9,10 @@ namespace Promocoes.Domain.Entities
 {
     public class PromotionsEntity : BaseEntity, IValidate
     {
-        public PromotionsEntity(string idPromotion, string idBusiness, string idProduct, DateTime startDate,
+        public PromotionsEntity(string idBusiness, string idProduct, DateTime startDate,
             DateTime endDate, double prevPrice, double discountedPrice)
         {
-            IdPromotion = idPromotion;
+            IdPromotion = Guid.NewGuid().ToString();
             IdBusiness = idBusiness;
             IdProduct = idProduct;
             StartDate = startDate;
@@ -29,15 +29,17 @@ namespace Promocoes.Domain.Entities
         public DateTime EndDate { get; private set; }
         public double PrevPrice { get; private set; }
         public double DiscountedPrice { get; private set; }
-        public double Percentage { get; private set; }
+        public int Percentage { get; private set; }
 
         private void CalculateDiscount()
         {    
-            this.Percentage = (PrevPrice - DiscountedPrice) / PrevPrice * 100;
+            this.Percentage = (int)((PrevPrice - DiscountedPrice) / PrevPrice * 100);
         }
         public bool IsValid()
         {
             return new PromotionsValidations(this).GuidIsValid()
+                .GuidBusinessIsValid()
+                .GuidProductIsValid()
                 .IsValid();
         }
     }
