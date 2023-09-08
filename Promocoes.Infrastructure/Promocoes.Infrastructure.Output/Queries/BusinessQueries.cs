@@ -15,17 +15,17 @@ namespace Promocoes.Infrastructure.Output.Queries
             this.Query = $@"
             SELECT
 	            tb.IdBusiness as IdEmpresa,
-	            tb.Name as Nome,
-	            tb.Description as Descricao,
-	            tb.Logo as  LogoImagem,
-	            tb.Location as Localizacao,
-	            tb.Email as Email,
-	            tb.Number as Numero,
-	            tb.Site as Site,
-	            tb.Category as Categoria,
-	            tb.Operation as HorarioOperacao,
-	            tb.Geodata as GeoLocalizacao,
-	            tb.IsAdmin as Admin
+				tb.Name as Nome,
+				tb.Description as Descricao,
+				tb.Logo as  LogoImagem,
+				tb.Location as Localizacao,
+				tb.Category as Categoria,
+				tb.Operation as HorarioOperacao,
+				tb.Geodata as GeoLocalizacao,
+				tb.IsAdmin as Admin,
+				tb.Email as Email,
+				tb.Number as Number,
+				tb.Site as Site
             FROM
 	            {this.Table} tb 
             ";
