@@ -25,6 +25,9 @@ builder.Services.AddMediatR(cfg => {
     cfg.RegisterServicesFromAssemblies(typeof(PromotionsCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(BusinessDTO).Assembly);
 });
+builder.Services.AddScoped<IWritePromotionsRepository, WritePromotionRepository>();
+builder.Services.AddScoped<IWriteProductRepository, WriteProductRepository>();
+builder.Services.AddScoped<IReadProductRepository, ReadProductRepository>();
 builder.Services.AddScoped<IReadBusinessRepository, ReadBusinessRepository>();
 builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
 

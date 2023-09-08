@@ -14,8 +14,8 @@ namespace Promocoes.Domain.ValueObjects
             Site = site;
         }
 
-        public string Email { get; private set; }
-        public string Number { get; private set; }
-        public string? Site { get; private set; }
+        public string Email { get;  set; }
+        public string Number { get;  set; }
+        public string? Site { get;  set; }
     }
 }

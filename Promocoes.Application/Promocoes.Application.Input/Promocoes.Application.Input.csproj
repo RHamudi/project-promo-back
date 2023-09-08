@@ -6,7 +6,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Imgur.API" Version="5.0.0" />
     <PackageReference Include="mediatr" Version="12.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="restsharp" Version="110.2.0" />
   </ItemGroup>
 
   <PropertyGroup>

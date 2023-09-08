@@ -2,6 +2,7 @@ using MediatR;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Repositories.Interfaces;
 using Promocoes.Domain.Entities;
+using Promocoes.Domain.Enums;
 
 namespace Promocoes.Application.Input.Receivers.BusinessReceiver
 {
@@ -17,8 +18,9 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
         public Task<State> Handle(BusinessCommand request, CancellationToken cancellationToken)
         {
 
+            var category = (ECategory)request.Category;
             var business = new BusinessEntity(request.Name, request.Password, request.Description,
-                request.Logo, request.Location, request.Contact, request.Category,
+                request.Logo, request.Location, request.Contact, category,
                 request.Operation, request.GeoData, request.IsAdmin);
 
             if(!business.IsValid())

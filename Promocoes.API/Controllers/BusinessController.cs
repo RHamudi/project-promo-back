@@ -3,13 +3,14 @@ using Microsoft.AspNetCore.Mvc;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Receivers.BusinessReceiver;
 using Promocoes.Application.Input.Repositories.Interfaces;
+using Promocoes.Application.Input.Services.Imgur.OAuth2;
 using Promocoes.Application.Output.DTOs;
 
 namespace Promocoes.API.Controllers
 {
     [ApiController]
     [Route("api/business/")]
-    public class BusinessController : ControllerBase
+    public class BusinessController : Controller
     {
         private readonly IMediator _mediator;
 
@@ -25,12 +26,18 @@ namespace Promocoes.API.Controllers
             return Ok(result);
         }
 
-        [HttpGet]
+        [HttpGet("getAll")]
         public async Task<IActionResult> GetAllBusiness()
         {
             
             var result = await _mediator.Send(new BusinessDTO());
             return Ok(result);
+        }
+
+        [HttpGet("teste")]
+        public IActionResult TestAuth()
+        {
+            return Ok(ImgurAuthorization.OAuth2());
         }
     }
 }
