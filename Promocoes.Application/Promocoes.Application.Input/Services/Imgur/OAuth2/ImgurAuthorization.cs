@@ -1,16 +1,19 @@
 using Newtonsoft.Json;
 using Imgur.API.Models;
 using RestSharp;
+using Imgur.API.Authentication;
+using Imgur.API.Endpoints;
 
 namespace Promocoes.Application.Input.Services.Imgur.OAuth2
 {
     public class ImgurAuthorization
     {
-
-        public static string OAuth2()
+        public static ImageEndpoint OAuth2()
         {
             string clientId = "5859e2e8632165e";
             string clientSecret = "dd56be9ba0e42cf82e19e16ae76a2f712588a40a";
+            var apiClient = new ApiClient(clientId, clientSecret);
+            var httpClient = new HttpClient();
 
             var token = new OAuth2Token
             {
@@ -21,6 +24,7 @@ namespace Promocoes.Application.Input.Services.Imgur.OAuth2
                 ExpiresIn = 315360000,
                 TokenType = "bearer"
             };
+
 
             var options = new RestClientOptions("https://api.imgur.com")
             {
@@ -39,11 +43,24 @@ namespace Promocoes.Application.Input.Services.Imgur.OAuth2
             RestResponse response = client.Execute(request);
 
             TokenResponse tokenResponse = JsonConvert.DeserializeObject<TokenResponse>(response.Content);
-            string formattedJson = JsonConvert.SerializeObject(tokenResponse, Formatting.Indented);
+            //string formattedJson = JsonConvert.SerializeObject(tokenResponse, Formatting.Indented);
+            
+            var tokenVerify = new OAuth2Token
+            {
+                AccessToken = tokenResponse.access_token,
+                RefreshToken = tokenResponse.refresh_token,
+                AccountId = tokenResponse.account_id,
+                AccountUsername = tokenResponse.account_username,
+                ExpiresIn = tokenResponse.expires_in,
+                TokenType = "bearer"
+            };
 
-            return formattedJson;
+            apiClient.SetOAuth2Token(tokenVerify);
+            var imageEndpoint = new ImageEndpoint(apiClient, httpClient);
+
+            return imageEndpoint;
         }
-        public class TokenResponse
+        public class TokenResponse : OAuth2Token
         {
             public string access_token { get; set; }
             public int expires_in { get; set; }
