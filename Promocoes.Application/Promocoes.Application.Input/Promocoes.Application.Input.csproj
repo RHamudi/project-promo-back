@@ -1,6 +1,12 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <ItemGroup>
+    <Compile Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="NovaPasta\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Promocoes.Domain\Promocoes.Domain.csproj" />
     <ProjectReference Include="..\..\Promocoes.Infrastructure\Promocoes.Infrastructure.Shared\Promocoes.Infrastructure.Shared.csproj" />
   </ItemGroup>
@@ -8,8 +14,13 @@
   <ItemGroup>
     <PackageReference Include="Imgur.API" Version="5.0.0" />
     <PackageReference Include="mediatr" Version="12.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Http.Features" Version="5.0.17" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="restsharp" Version="110.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Storage\" />
   </ItemGroup>
 
   <PropertyGroup>
