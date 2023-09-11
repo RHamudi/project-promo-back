@@ -1,3 +1,4 @@
+using Azure.Core;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Promocoes.Application.Input.Commands.BusinessContext;
@@ -20,7 +21,7 @@ namespace Promocoes.API.Controllers
         }
 
         [HttpPost("insert")]
-        public async Task<IActionResult> Insert([FromBody] BusinessCommand command)
+        public async Task<IActionResult> Insert([FromForm] BusinessCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
@@ -29,15 +30,9 @@ namespace Promocoes.API.Controllers
         [HttpGet("getAll")]
         public async Task<IActionResult> GetAllBusiness()
         {
-            
             var result = await _mediator.Send(new BusinessDTO());
             return Ok(result);
         }
 
-        [HttpGet("teste")]
-        public IActionResult TestAuth()
-        {
-            return Ok(ImgurAuthorization.OAuth2());
-        }
     }
 }
