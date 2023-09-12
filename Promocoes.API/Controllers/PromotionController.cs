@@ -7,11 +7,12 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Promocoes.Application.Input.Commands.PromotionsContext;
+using Promocoes.Application.Output.DTOs;
 
 namespace Promocoes.API.Controllers
 {
     [ApiController]
-    [Route("api/business/")]
+    [Route("api/promotion/")]
     public class PromotionController : Controller
     {
         private readonly IMediator _mediator;
@@ -20,10 +21,16 @@ namespace Promocoes.API.Controllers
             _mediator = mediator;
         }
 
-       [HttpPost("")]
-       public async Task<IActionResult> Insert([FromBody] PromotionsCommand promotion)
-       {
+        [HttpPost("insert")]
+        public async Task<IActionResult> Insert([FromBody] PromotionsCommand promotion)
+        {
             return Ok(await _mediator.Send(promotion));
-       }
+        }
+
+        [HttpGet("getAll")]
+        public async Task<IActionResult> GetAll()
+        {
+            return Ok(await _mediator.Send(new PromotionDTO()));
+        }
     }
 }
