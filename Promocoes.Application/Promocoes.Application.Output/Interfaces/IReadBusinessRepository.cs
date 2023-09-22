@@ -4,6 +4,8 @@ namespace Promocoes.Application.Output.Interfaces
 {
     public interface IReadBusinessRepository
     {
-        IEnumerable<BusinessDTO> GetAllBusiness();
+        IEnumerable<AllBusinessDTO> GetAllBusiness();
+        
+        AllBusinessDTO GetBusinessById(Guid idEmpresa);
     }
 }
