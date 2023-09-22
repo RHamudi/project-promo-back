@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using Azure.Core;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +31,14 @@ namespace Promocoes.API.Controllers
         [HttpGet("getAll")]
         public async Task<IActionResult> GetAllBusiness()
         {
-            var result = await _mediator.Send(new BusinessDTO());
+            var result = await _mediator.Send(new AllBusinessDTO());
+            return Ok(result);
+        }
+
+        [HttpGet("getbyid")]
+        public async Task<IActionResult> GetById([FromQuery] string idEmpresa)
+        {
+            var result = await _mediator.Send(new ByIdBusinessDTO(idEmpresa));
             return Ok(result);
         }
 
