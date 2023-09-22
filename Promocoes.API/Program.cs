@@ -23,7 +23,8 @@ builder.Services.AddMediatR(cfg => {
     cfg.RegisterServicesFromAssemblies(typeof(BusinessCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(ProductCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(PromotionsCommand).Assembly);
-    cfg.RegisterServicesFromAssemblies(typeof(BusinessDTO).Assembly);
+    cfg.RegisterServicesFromAssemblies(typeof(AllBusinessDTO).Assembly);
+    cfg.RegisterServicesFromAssemblies(typeof(ByIdBusinessDTO).Assembly);
 });
 builder.Services.AddScoped<IReadPromotionRepository, ReadPromotionRepository>();
 builder.Services.AddScoped<IWritePromotionsRepository, WritePromotionRepository>();
@@ -32,8 +33,18 @@ builder.Services.AddScoped<IReadProductRepository, ReadProductRepository>();
 builder.Services.AddScoped<IReadBusinessRepository, ReadBusinessRepository>();
 builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: "MyPolicy",
+        policy =>
+        {
+            policy.WithOrigins("*").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+        });
+});
 
 var app = builder.Build();
+
+app.UseCors("MyPolicy");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
