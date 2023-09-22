@@ -19,8 +19,4 @@
     <ProjectReference Include="..\Promocoes.Infrastructure\Promocoes.Infrastructure.Output\Promocoes.Infrastructure.Output.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Storage\" />
-  </ItemGroup>
-
 </Project>
