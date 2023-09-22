@@ -8,16 +8,16 @@ using Promocoes.Application.Output.Interfaces;
 
 namespace Promocoes.Application.Output.Receivers
 {
-    public class BusinessReadReceiver : IRequestHandler<BusinessDTO, State>
+    public class AllBusinessReadReceiver : IRequestHandler<AllBusinessDTO, State>
     {
         private readonly IReadBusinessRepository _repository;
 
-        public BusinessReadReceiver(IReadBusinessRepository repository)
+        public AllBusinessReadReceiver(IReadBusinessRepository repository)
         {
             _repository = repository;
         }
 
-        public Task<State> Handle(BusinessDTO request, CancellationToken cancellationToken)
+        public Task<State> Handle(AllBusinessDTO request, CancellationToken cancellationToken)
         {
             var getBusiness = _repository.GetAllBusiness();
 
