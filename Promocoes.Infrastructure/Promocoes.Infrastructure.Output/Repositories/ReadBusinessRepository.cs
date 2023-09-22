@@ -17,7 +17,7 @@ namespace Promocoes.Infrastructure.Output.Repositories
             _connection = SqlFactory.SqlFactoryConnection();
         }
 
-        public IEnumerable<BusinessDTO> GetAllBusiness()
+        public IEnumerable<AllBusinessDTO> GetAllBusiness()
         {
             var query = new BusinessQueries().GetAllBusinessQuery();
 
@@ -25,7 +25,7 @@ namespace Promocoes.Infrastructure.Output.Repositories
             {
                 using(_connection)
                 {
-                  return _connection.Query<BusinessDTO, Contacts, BusinessDTO>(query.Query, 
+                  return _connection.Query<AllBusinessDTO, Contacts, AllBusinessDTO>(query.Query, 
                   (business, contacts) => {
                     business.Contatos = contacts;
                     return business;
@@ -36,6 +36,28 @@ namespace Promocoes.Infrastructure.Output.Repositories
             catch (Exception ex)
             {
                 throw new Exception($@"Erro ao buscar empresas: {ex.Message}");
+            }
+        }
+
+        public AllBusinessDTO GetBusinessById(Guid idEmpresa)
+        {
+            var query = new BusinessQueries().GetByIdBusinessQuery(idEmpresa);
+
+            try
+            {
+                using(_connection)
+                {
+                    return _connection.Query<AllBusinessDTO, Contacts, AllBusinessDTO>(query.Query, 
+                  (business, contacts) => {
+                    business.Contatos = contacts;
+                    return business;
+                  },
+                  splitOn: "Email").First();
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception($@"Erro ao buscar empresa: {ex.Message}");
             }
         }
     }
