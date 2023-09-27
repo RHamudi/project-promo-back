@@ -1,6 +1,7 @@
 using MediatR;
 using Promocoes.Application.Input.Commands.ProductContext;
 using Promocoes.Application.Input.Repositories.Interfaces;
+using Promocoes.Application.Input.Services.Imgur.OAuth2;
 using Promocoes.Domain.Entities;
 
 namespace Promocoes.Application.Input.Receivers.ProductReceiver
@@ -16,7 +17,10 @@ namespace Promocoes.Application.Input.Receivers.ProductReceiver
 
         public Task<State> Handle(ProductCommand request, CancellationToken cancellationToken)
         {
-            var product = new ProductEntity(request.IdBusiness, request.Name, request.Description, request.Images, request.Price);
+            var auth = ImgurAuthorization.OAuth2();
+            var uploadImage = ImgurUploadImage.UploadImage(auth, request.Images);
+            
+            var product = new ProductEntity(request.IdBusiness, request.Name, request.Description, uploadImage.Result.Link, request.Price);
 
             if(!product.IsValid())
                 return Task.FromResult(new State(400, "Não foi possivel adicionar o produto", product.Notifications));
