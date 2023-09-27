@@ -23,15 +23,23 @@ namespace Promocoes.API.Controllers
         }
 
         [HttpPost("insert")]
-        public async Task<IActionResult> InsertProduct([FromBody] ProductCommand command)
+        public async Task<IActionResult> InsertProduct([FromForm] ProductCommand command)
         {
-            return Ok(await _mediator.Send(command));
+            var result = await _mediator.Send(command);
+            return Ok(result);
         }
 
         [HttpGet("getAll")]
         public async Task<IActionResult> GetAllProducts()
         {
             return Ok(await _mediator.Send(new ProductDTO()));
+        }
+
+        [HttpGet("getbyid")]
+        public async Task<IActionResult> GetById([FromQuery] string idEmpresa)
+        {
+            var result = await _mediator.Send(new ByIdProductDTO(idEmpresa));
+            return Ok(result);
         }
     }
 }
