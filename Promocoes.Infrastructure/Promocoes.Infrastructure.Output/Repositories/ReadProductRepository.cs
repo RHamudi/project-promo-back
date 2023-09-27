@@ -33,7 +33,24 @@ namespace Promocoes.Infrastructure.Output.Repositories
             }
             catch(Exception ex)
             {
-                throw new Exception($@"Erro ao buscar empresas: {ex.Message}");
+                throw new Exception($@"Erro ao buscar produtos: {ex.Message}");
+            }
+        }
+
+        public IEnumerable<ProductDTO> GetProductsByBusinessId(Guid idEmpresa)
+        {
+            var query = new ProductQueries().GetProductsByIdBusiness(idEmpresa);
+
+            try
+            {   
+                using(_connection)
+                {
+                    return _connection.Query<ProductDTO>(query.Query, query.Parameters);
+                }
+            }
+            catch(Exception ex)
+            {
+                throw new Exception($"Erro ao buscar produtos: {ex.Message}");
             }
         }
     }
