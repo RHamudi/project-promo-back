@@ -9,5 +9,6 @@ namespace Promocoes.Application.Output.Interfaces
     public interface IReadProductRepository
     {
         IEnumerable<ProductDTO> GetAllProducts();
+        IEnumerable<ProductDTO> GetProductsByBusinessId(Guid idEmpresa);
     }
 }
