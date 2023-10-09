@@ -1,7 +1,4 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Domain.Entities;
 using Promocoes.Infrastructure.Shared.Shared;
 
@@ -11,42 +8,67 @@ namespace Promocoes.Infrastructure.Input.Queries
     {
         public QueryModel InsertBusinessQuery(BusinessEntity entity)
         {
-            this.Table = Map.GetTableBusiness();
+            Table = Map.GetTableBusiness();
 
-            this.Query = $@"
-            INSERT INTO {this.Table}
-            VALUES
-            (
-                @IdBusiness,
-                @Name,
-                @Password,
-                @Description,
-                @Logo,
-                @Location,
-                @Email,
-                @Number,
-                @Site,
-                @Category,
-                @Operation,
-                @Geodata,
-                @IsAdmin
-            )
-            ";
+            Query = $"""
+                     
+                                 INSERT INTO {Table}
+                                 VALUES
+                                 (
+                                     @IdBusiness,
+                                     @Name,
+                                     @Password,
+                                     @Description,
+                                     @Logo,
+                                     @Location,
+                                     @Email,
+                                     @Number,
+                                     @Site,
+                                     @Category,
+                                     @Operation,
+                                     @Geodata,
+                                     @IsAdmin
+                                 )
+                                 
+                     """;
 
-            this.Parameters = new {
-                IdBusiness = entity.IdBusiness,
-                Name = entity.Name,
-                Password = entity.Password,
-                Description = entity.Description,
-                Logo = entity.Logo,
-                Location = entity.Location,
-                Email = entity.Contacts.Email,
-                Number = entity.Contacts.Number,
-                Site = entity.Contacts.Site,
-                Category = entity.Category,
-                Operation = entity.Operation,
+            Parameters = new {
+                entity.IdBusiness,
+                entity.Name,
+                entity.Password,
+                entity.Description,
+                entity.Logo,
+                entity.Location,
+                entity.Contacts.Email,
+                entity.Contacts.Number,
+                entity.Contacts.Site,
+                entity.Category,
+                entity.Operation,
                 Geodata = entity.GeoData,
                 IsAdmin = true ? 1 : 0
+            };
+
+            return new QueryModel(Query, Parameters);
+        }
+
+        public QueryModel AuthenticationQuery(AuthenticationCommand command)
+        {
+            this.Table = Map.GetTableBusiness();
+
+            this.Query = $"""
+                          
+                                          SELECT
+                          	                tb.Email as  Email,
+                          	                tb.Password as Senha
+                                          FROM
+                          	                {this.Table} tb WHERE Email = @Email AND Password = @Password
+                                      
+                          """;
+
+            this.Parameters = new
+            {
+                command.Email,
+                command.Password,
             };
 
             return new QueryModel(this.Query, this.Parameters);
