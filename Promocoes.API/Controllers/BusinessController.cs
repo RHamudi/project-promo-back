@@ -1,11 +1,7 @@
-using System.Runtime.InteropServices;
-using Azure.Core;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Promocoes.Application.Input.Commands.BusinessContext;
-using Promocoes.Application.Input.Receivers.BusinessReceiver;
-using Promocoes.Application.Input.Repositories.Interfaces;
-using Promocoes.Application.Input.Services.Imgur.OAuth2;
+using Promocoes.Application.Input.Services.Jwt;
 using Promocoes.Application.Output.DTOs;
 
 namespace Promocoes.API.Controllers
@@ -42,5 +38,11 @@ namespace Promocoes.API.Controllers
             return Ok(result);
         }
 
+        [HttpPost("Authentication")]
+        public async Task<IActionResult> Authentication([FromBody] AuthenticationCommand model)
+        {
+            var result = await _mediator.Send(new AuthenticationCommand(model.Email, model.Password));
+            return Ok(result);
+        }
     }
 }
