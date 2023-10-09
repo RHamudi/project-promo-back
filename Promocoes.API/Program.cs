@@ -23,9 +23,11 @@ builder.Services.AddMediatR(cfg => {
     cfg.RegisterServicesFromAssemblies(typeof(BusinessCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(ProductCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(PromotionsCommand).Assembly);
+    cfg.RegisterServicesFromAssemblies(typeof(AuthenticationCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(AllBusinessDTO).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(ByIdBusinessDTO).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(ByIdProductDTO).Assembly);
+    
 });
 builder.Services.AddScoped<IReadPromotionRepository, ReadPromotionRepository>();
 builder.Services.AddScoped<IWritePromotionsRepository, WritePromotionRepository>();
@@ -33,6 +35,7 @@ builder.Services.AddScoped<IWriteProductRepository, WriteProductRepository>();
 builder.Services.AddScoped<IReadProductRepository, ReadProductRepository>();
 builder.Services.AddScoped<IReadBusinessRepository, ReadBusinessRepository>();
 builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
+builder.Services.AddScoped<IAuthenticationBusinessRepository, AuthenticationBusinessRepository>();
 
 builder.Services.AddCors(options =>
 {
