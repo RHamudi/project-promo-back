@@ -17,6 +17,7 @@
     <ProjectReference Include="..\Promocoes.Infrastructure\Promocoes.Infrastructure.Input\Promocoes.Infrastructure.Input.csproj" />
     <ProjectReference Include="..\Promocoes.Application\Promocoes.Application.Output\Promocoes.Application.Output.csproj" />
     <ProjectReference Include="..\Promocoes.Infrastructure\Promocoes.Infrastructure.Output\Promocoes.Infrastructure.Output.csproj" />
+    <ProjectReference Include="..\Promocoes.Tests\Promocoes.Tests.csproj" />
   </ItemGroup>
 
 </Project>
