@@ -1,6 +1,7 @@
-using System.Security.Cryptography.X509Certificates;
+
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.TagHelpers.Cache;
 using Microsoft.AspNetCore.OutputCaching;
 using Promocoes.Application.Input.Commands.ProductContext;
 using Promocoes.Application.Output.DTOs;
@@ -19,13 +20,15 @@ namespace Promocoes.API.Controllers
         }
 
         [HttpPost("insert")]
-        public async Task<IActionResult> InsertProduct([FromForm] ProductCommand command)
+        public async Task<IActionResult> InsertProduct([FromForm] ProductCommand command, IOutputCacheStore cache
+        ,CancellationToken ct)
         {
             var result = await _mediator.Send(command);
+            await cache.EvictByTagAsync("products", ct);
             return Ok(result);
         }
 
-        
+        [OutputCache(PolicyName = "ProductsRefresh")]
         [HttpGet("getAll")]
         public async Task<IActionResult> GetAllProducts()
         {
