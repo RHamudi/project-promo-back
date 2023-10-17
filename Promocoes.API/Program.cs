@@ -37,7 +37,11 @@ builder.Services.AddScoped<IReadBusinessRepository, ReadBusinessRepository>();
 builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
 builder.Services.AddScoped<IAuthenticationBusinessRepository, AuthenticationBusinessRepository>();
 
-builder.Services.AddOutputCache();
+builder.Services.AddOutputCache(options =>
+    {
+        options.AddPolicy("ProductsRefresh",builder => builder.Tag("products"));
+    }
+    );
 
 builder.Services.AddCors(options =>
 {
