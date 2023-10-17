@@ -35,7 +35,7 @@ namespace Promocoes.API.Controllers
             return Ok(await _mediator.Send(new ProductDTO()));
         }
 
-        [OutputCache(VaryByQueryKeys = new[] { "idEmpresa" })]
+        [OutputCache(VaryByQueryKeys = new[] { "idEmpresa" }, PolicyName = "ProductsRefresh")]
         [HttpGet("getbyid")]
         public async Task<IActionResult> GetById([FromQuery] string idEmpresa)
         {
