@@ -40,6 +40,7 @@ builder.Services.AddScoped<IAuthenticationBusinessRepository, AuthenticationBusi
 builder.Services.AddOutputCache(options =>
     {
         options.AddPolicy("ProductsRefresh",builder => builder.Tag("products"));
+        options.AddPolicy("BusinessRefresh",builder => builder.Tag("Business"));
     }
     );
 
