@@ -37,6 +37,8 @@ builder.Services.AddScoped<IReadBusinessRepository, ReadBusinessRepository>();
 builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
 builder.Services.AddScoped<IAuthenticationBusinessRepository, AuthenticationBusinessRepository>();
 
+builder.Services.AddOutputCache();
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy(name: "MyPolicy",
@@ -56,6 +58,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseOutputCache();
 
 app.UseHttpsRedirection();
 
