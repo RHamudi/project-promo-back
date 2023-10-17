@@ -1,5 +1,6 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Services.Jwt;
 using Promocoes.Application.Output.DTOs;
@@ -17,13 +18,14 @@ namespace Promocoes.API.Controllers
             _mediator = mediator;
         }
 
+        
         [HttpPost("insert")]
         public async Task<IActionResult> Insert([FromForm] BusinessCommand command)
         {
             var result = await _mediator.Send(command);
             return Ok(result);
         }
-
+        
         [HttpGet("getAll")]
         public async Task<IActionResult> GetAllBusiness()
         {
