@@ -20,12 +20,15 @@ namespace Promocoes.API.Controllers
 
         
         [HttpPost("insert")]
-        public async Task<IActionResult> Insert([FromForm] BusinessCommand command)
+        public async Task<IActionResult> Insert([FromForm] BusinessCommand command, IOutputCacheStore cache
+        ,CancellationToken ct)
         {
             var result = await _mediator.Send(command);
+            await cache.EvictByTagAsync("Business", ct);
             return Ok(result);
         }
         
+        [OutputCache(PolicyName = "Business")]
         [HttpGet("getAll")]
         public async Task<IActionResult> GetAllBusiness()
         {
@@ -33,6 +36,7 @@ namespace Promocoes.API.Controllers
             return Ok(result);
         }
 
+        [OutputCache(VaryByQueryKeys = new[] { "idEmpresa" },PolicyName = "Business")]
         [HttpGet("getbyid")]
         public async Task<IActionResult> GetById([FromQuery] string idEmpresa)
         {
