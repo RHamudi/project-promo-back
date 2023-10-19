@@ -41,6 +41,7 @@ builder.Services.AddOutputCache(options =>
     {
         options.AddPolicy("ProductsRefresh",builder => builder.Tag("products"));
         options.AddPolicy("BusinessRefresh",builder => builder.Tag("Business"));
+        options.AddPolicy("PromotionRefresh",builder => builder.Tag("Promotion"));
     }
     );
 
