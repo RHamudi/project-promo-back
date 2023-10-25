@@ -55,20 +55,20 @@ namespace Promocoes.Infrastructure.Input.Queries
         {
             this.Table = Map.GetTableBusiness();
 
-            this.Query = $"""
-                          
-                                          SELECT
-                          	                tb.Email as  Email,
-                          	                tb.Password as Senha
-                                          FROM
-                          	                {this.Table} tb WHERE Email = @Email AND Password = @Password
-                                      
-                          """;
+            this.Query = $@"
+
+                            SELECT
+                                tb.Email as  Email,
+                                tb.Password as Senha
+                            FROM
+                            {this.Table} tb WHERE Email = '{command.Email}' AND Password = '{command.Password}'
+                        
+                          ";
 
             this.Parameters = new
             {
-                command.Email,
-                command.Password,
+                Email = command.Email,
+                Password = command.Password,
             };
 
             return new QueryModel(this.Query, this.Parameters);
