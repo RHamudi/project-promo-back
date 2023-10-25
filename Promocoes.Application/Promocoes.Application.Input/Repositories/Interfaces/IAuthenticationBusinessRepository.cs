@@ -4,6 +4,6 @@ namespace Promocoes.Application.Input.Repositories.Interfaces
 {
     public interface IAuthenticationBusinessRepository
     {
-        void Authentication(AuthenticationCommand command);
+        AuthenticationCommand Authentication(AuthenticationCommand command);
     }
 }
