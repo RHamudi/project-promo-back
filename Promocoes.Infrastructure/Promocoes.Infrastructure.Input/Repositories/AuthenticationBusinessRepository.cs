@@ -1,8 +1,4 @@
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Threading.Tasks;
 using Dapper;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Repositories.Interfaces;
@@ -20,13 +16,16 @@ namespace Promocoes.Infrastructure.Input.Repositories
             _connection = SqlFactory.SqlFactoryConnection();
         }
         
-        public void Authentication(AuthenticationCommand command)
+        public AuthenticationCommand Authentication(AuthenticationCommand command)
         {
             var query = new BusinessQueries().AuthenticationQuery(command);
 
             try
             {
-                _connection.Execute(query.Query, query.Parameters);
+                using(_connection)
+                {
+                    return _connection.QueryFirstOrDefault<AuthenticationCommand>(query.Query);
+                }
             }
             catch (Exception ex)
             {
