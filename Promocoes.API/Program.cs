@@ -1,4 +1,5 @@
 using System.Reflection;
+using Microsoft.VisualBasic;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Commands.ProductContext;
 using Promocoes.Application.Input.Commands.PromotionsContext;
@@ -42,6 +43,7 @@ builder.Services.AddOutputCache(options =>
         options.AddPolicy("ProductsRefresh",builder => builder.Tag("products"));
         options.AddPolicy("BusinessRefresh",builder => builder.Tag("Business"));
         options.AddPolicy("PromotionRefresh",builder => builder.Tag("Promotion"));
+        
     }
     );
 
