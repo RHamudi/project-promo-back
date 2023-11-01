@@ -22,7 +22,6 @@ namespace Promocoes.Infrastructure.Output.Queries
 				tb.Category as Categoria,
 				tb.Operation as HorarioOperacao,
 				tb.Geodata as GeoLocalizacao,
-				tb.IsAdmin as Admin,
 				tb.Email as Email,
 				tb.Number as Number,
 				tb.Site as Site
@@ -47,7 +46,6 @@ namespace Promocoes.Infrastructure.Output.Queries
 				tb.Category as Categoria,
 				tb.Operation as HorarioOperacao,
 				tb.Geodata as GeoLocalizacao,
-				tb.IsAdmin as Admin,
 				tb.Email as Email,
 				tb.Number as Number,
 				tb.Site as Site

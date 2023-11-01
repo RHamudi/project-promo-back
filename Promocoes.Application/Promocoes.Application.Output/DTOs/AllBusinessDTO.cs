@@ -14,7 +14,6 @@ namespace Promocoes.Application.Output.DTOs
         public string Categoria { get; set; }
         public string HorarioOperacao { get;  set; }
         public string GeoLocalizacao { get;  set; }
-        public bool Admin { get;  set; }
         public Contacts Contatos { get; set; }
     }
 }
