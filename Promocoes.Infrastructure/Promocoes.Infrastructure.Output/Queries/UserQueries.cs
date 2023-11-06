@@ -23,7 +23,7 @@ namespace Promocoes.Infrastructure.Output.Queries
                             {this.Table} tb
                         ";
             
-            return new QueryModel(this.Table, null);
+            return new QueryModel(this.Query, null);
         }
     }
 }
