@@ -24,7 +24,7 @@ namespace Promocoes.Infrastructure.Output.Repositories
             {
                 using(_connection)
                 {
-                    return _connection.Query<UserDTO>(query.Query, null);
+                    return _connection.Query<UserDTO>(query.Query, query.Parameters);
                 }
             }
             catch
