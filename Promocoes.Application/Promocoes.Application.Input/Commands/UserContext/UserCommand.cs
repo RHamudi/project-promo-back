@@ -9,10 +9,9 @@ namespace Promocoes.Application.Input.Commands.UserContext
 {
     public class UserCommand : IRequest<State>
     {
-        public string IdUser { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
-        public string IdBusiness { get; set; }
+        public string? IdBusiness { get; set; }
     }
 }
