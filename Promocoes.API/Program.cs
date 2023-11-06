@@ -3,6 +3,7 @@ using Microsoft.VisualBasic;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Commands.ProductContext;
 using Promocoes.Application.Input.Commands.PromotionsContext;
+using Promocoes.Application.Input.Commands.UserContext;
 using Promocoes.Application.Input.Receivers.BusinessReceiver;
 using Promocoes.Application.Input.Repositories.Interfaces;
 using Promocoes.Application.Output.DTOs;
@@ -25,10 +26,11 @@ builder.Services.AddMediatR(cfg => {
     cfg.RegisterServicesFromAssemblies(typeof(ProductCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(PromotionsCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(AuthenticationCommand).Assembly);
+    cfg.RegisterServicesFromAssemblies(typeof(UserCommand).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(AllBusinessDTO).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(ByIdBusinessDTO).Assembly);
     cfg.RegisterServicesFromAssemblies(typeof(ByIdProductDTO).Assembly);
-    
+    cfg.RegisterServicesFromAssemblies(typeof(UserDTO).Assembly);
 });
 builder.Services.AddScoped<IReadPromotionRepository, ReadPromotionRepository>();
 builder.Services.AddScoped<IWritePromotionsRepository, WritePromotionRepository>();
@@ -37,6 +39,8 @@ builder.Services.AddScoped<IReadProductRepository, ReadProductRepository>();
 builder.Services.AddScoped<IReadBusinessRepository, ReadBusinessRepository>();
 builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
 builder.Services.AddScoped<IAuthenticationBusinessRepository, AuthenticationBusinessRepository>();
+builder.Services.AddScoped<IWriteUserRepository, WriteUserRepository>();
+builder.Services.AddScoped<IReadUserRepository, ReadUserRepository>();
 
 builder.Services.AddOutputCache(options =>
     {
