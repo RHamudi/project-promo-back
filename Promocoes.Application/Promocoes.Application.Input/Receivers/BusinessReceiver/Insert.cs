@@ -23,9 +23,9 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
             var uploadImage = ImgurUploadImage.UploadImage(auth, request.Logo);
             var contacts = new Contacts(request.Email, request.Number, request.Site);
             var category = (ECategory)request.Category;
-            var business = new BusinessEntity(request.Name, request.Password, request.Description,
+            var business = new BusinessEntity(request.Name, request.Description,
                 uploadImage.Result.Link, request.Location, contacts, category,
-                request.Operation, request.GeoData, request.IsAdmin);
+                request.Operation, request.GeoData);
 
             if(!business.IsValid())
                 return Task.FromResult(new State(400, "Erro ao inserir Empresa", business.Notifications));
