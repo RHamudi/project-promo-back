@@ -17,7 +17,6 @@ namespace Promocoes.Infrastructure.Input.Queries
                                  (
                                      @IdBusiness,
                                      @Name,
-                                     @Password,
                                      @Description,
                                      @Logo,
                                      @Location,
@@ -27,7 +26,6 @@ namespace Promocoes.Infrastructure.Input.Queries
                                      @Category,
                                      @Operation,
                                      @Geodata,
-                                     @IsAdmin
                                  )
                                  
                      """;
@@ -35,7 +33,6 @@ namespace Promocoes.Infrastructure.Input.Queries
             Parameters = new {
                 entity.IdBusiness,
                 entity.Name,
-                entity.Password,
                 entity.Description,
                 entity.Logo,
                 entity.Location,
@@ -45,7 +42,6 @@ namespace Promocoes.Infrastructure.Input.Queries
                 entity.Category,
                 entity.Operation,
                 Geodata = entity.GeoData,
-                IsAdmin = true ? 1 : 0
             };
 
             return new QueryModel(Query, Parameters);
