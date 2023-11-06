@@ -8,10 +8,10 @@ namespace Promocoes.Application.Output.DTOs
 {
     public class UserDTO : IRequest<State>
     {
-        public string IdUsuario { get; set; }
+        public Guid IdUsuario { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public string IdEmpresa { get; set; }
+        public Guid? IdEmpresa { get; set; }
     }
 }
