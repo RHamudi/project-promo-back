@@ -20,7 +20,7 @@ namespace Promocoes.Domain.Validations
 
         public UserValidations GuidIsValid()
         {
-            if(!Guid.TryParse(_user.IdBusiness, out Guid x))
+            if(_user.IdBusiness.Length != 0 & !Guid.TryParse(_user.IdBusiness, out Guid x))
                 _user.AddNotification(new Notification("IdBusiness", "Id invalido"));
 
             return this;
