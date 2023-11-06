@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Promocoes.Application.Input.Commands.UserContext;
+using Promocoes.Application.Output.DTOs;
 
 namespace Promocoes.API.Controllers
 {
@@ -23,6 +24,13 @@ namespace Promocoes.API.Controllers
         public async Task<IActionResult> Insert([FromBody] UserCommand command)
         {
             var result = await _mediator.Send(command);
+            return Ok(result);
+        }
+
+        [HttpGet("getall")]
+        public async Task<IActionResult> GetAll()
+        {
+            var result = await _mediator.Send(new UserDTO());
             return Ok(result);
         }
     }
