@@ -16,8 +16,14 @@ namespace Promocoes.Tests.Tests
 
         public UserEntityTests()
         {
-            _user = new UserEntity("Ramon", "ramonramos.silva19@gmail.com", "ramonramos9137", "c94b9a1c-1c28-4ab1-aa90-6c2a498ce1bd");
+            _user = new UserEntity("Ramon", "ramonramos.silva19@gmail.com", "ramonramos9137", "");
             _validations = new UserValidations(_user);
+        }
+
+        [TestMethod]
+        public void GuidIsValid()
+        {
+            Assert.IsTrue(_validations.GuidIsValid().IsValid());
         }
 
         [TestMethod]
