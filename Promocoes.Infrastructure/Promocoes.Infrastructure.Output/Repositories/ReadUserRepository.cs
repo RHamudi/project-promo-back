@@ -11,7 +11,7 @@ namespace Promocoes.Infrastructure.Output.Repositories
     {
         private readonly IDbConnection _connection;
 
-        public ReadUserRepository(IDbConnection connection)
+        public ReadUserRepository()
         {
             _connection = SqlFactory.SqlFactoryConnection();
         }

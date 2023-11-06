@@ -15,7 +15,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
     {
         private readonly IDbConnection _connection;
 
-        public WriteUserRepository(IDbConnection connection)
+        public WriteUserRepository()
         {
             _connection = SqlFactory.SqlFactoryConnection();
         }
