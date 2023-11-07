@@ -12,9 +12,9 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
 {
     public class Authentication : IRequestHandler<AuthenticationCommand, State>
     {
-        private readonly IAuthenticationBusinessRepository _repository;
+        private readonly IAuthenticationRepository _repository;
 
-        public Authentication(IAuthenticationBusinessRepository repository)
+        public Authentication(IAuthenticationRepository repository)
         {
             _repository = repository;
         }
