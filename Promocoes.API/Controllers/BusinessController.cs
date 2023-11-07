@@ -44,12 +44,5 @@ namespace Promocoes.API.Controllers
             return Ok(result);
         }
 
-        [OutputCache(NoStore = true, Duration = 0)]
-        [HttpPost("Authentication")]
-        public async Task<IActionResult> Authentication([FromBody] AuthenticationCommand model)
-        {
-            var result = await _mediator.Send(model);
-            return Ok(result);
-        }
     }
 }
