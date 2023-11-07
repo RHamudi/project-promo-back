@@ -9,7 +9,6 @@ namespace Promocoes.Application.Input.Commands.BusinessContext
 {
     public class AuthenticationCommand : IRequest<State>
     {
-        
         public string Password { get; set; }
         public string Email { get; set; }
     }
