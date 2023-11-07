@@ -4,6 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.OutputCaching;
+using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Commands.UserContext;
 using Promocoes.Application.Output.DTOs;
 
@@ -31,6 +33,14 @@ namespace Promocoes.API.Controllers
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send(new UserDTO());
+            return Ok(result);
+        }
+
+        [OutputCache(NoStore = true, Duration = 0)]
+        [HttpPost("Authentication")]
+        public async Task<IActionResult> Authentication([FromBody] AuthenticationCommand model)
+        {
+            var result = await _mediator.Send(model);
             return Ok(result);
         }
     }
