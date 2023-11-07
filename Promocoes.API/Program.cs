@@ -38,7 +38,7 @@ builder.Services.AddScoped<IWriteProductRepository, WriteProductRepository>();
 builder.Services.AddScoped<IReadProductRepository, ReadProductRepository>();
 builder.Services.AddScoped<IReadBusinessRepository, ReadBusinessRepository>();
 builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
-builder.Services.AddScoped<IAuthenticationBusinessRepository, AuthenticationBusinessRepository>();
+builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 builder.Services.AddScoped<IWriteUserRepository, WriteUserRepository>();
 builder.Services.AddScoped<IReadUserRepository, ReadUserRepository>();
 
