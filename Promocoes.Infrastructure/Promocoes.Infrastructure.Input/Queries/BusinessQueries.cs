@@ -47,27 +47,6 @@ namespace Promocoes.Infrastructure.Input.Queries
             return new QueryModel(Query, Parameters);
         }
 
-        public QueryModel AuthenticationQuery(AuthenticationCommand command)
-        {
-            this.Table = Map.GetTableBusiness();
-
-            this.Query = $@"
-
-                            SELECT
-                                tb.Email as  Email,
-                                tb.Password as Senha
-                            FROM
-                            {this.Table} tb WHERE Email = '{command.Email}' AND Password = '{command.Password}'
-                        
-                          ";
-
-            this.Parameters = new
-            {
-                Email = command.Email,
-                Password = command.Password,
-            };
-
-            return new QueryModel(this.Query, this.Parameters);
-        }
+        
     }
 }
