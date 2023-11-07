@@ -7,18 +7,18 @@ using Promocoes.Infrastructure.Shared.Factory;
 
 namespace Promocoes.Infrastructure.Input.Repositories
 {
-    public class AuthenticationBusinessRepository : IAuthenticationBusinessRepository
+    public class AuthenticationRepository : IAuthenticationRepository
     {
         private readonly IDbConnection _connection;
 
-        public AuthenticationBusinessRepository()
+        public AuthenticationRepository()
         {
             _connection = SqlFactory.SqlFactoryConnection();
         }
         
         public AuthenticationCommand Authentication(AuthenticationCommand command)
         {
-            var query = new BusinessQueries().AuthenticationQuery(command);
+            var query = new UserQueries().AuthenticationQuery(command);
 
             try
             {
