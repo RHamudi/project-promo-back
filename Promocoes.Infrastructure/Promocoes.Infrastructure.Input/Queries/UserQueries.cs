@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Promocoes.Application.Input.Commands.BusinessContext;
+using Promocoes.Application.Input.Commands.UserContext;
 using Promocoes.Domain.Entities;
 using Promocoes.Infrastructure.Shared.Shared;
 
@@ -32,6 +33,47 @@ namespace Promocoes.Infrastructure.Input.Queries
                 Email = entity.Email,
                 Password = entity.Password,
                 IdBusiness = entity.IdBusiness.Length == 0 ? null : entity.IdBusiness 
+            };
+
+            return new QueryModel(this.Query, this.Parameters);
+        }
+
+        public QueryModel GetUserById(Guid command)
+        {
+            this.Table = Map.GetTableUser();
+
+            this.Query = $@"
+                        SELECT
+                            tb.IdUser,
+                            tb.Name,
+                            tb.Email,
+                            tb.Password,
+                            tb.IdBusiness 
+                        FROM
+                            tb_users tb WHERE IdUser = @IdUser
+                        ";
+            
+            this.Parameters = new {
+                IdUser = command
+            };
+
+            return new QueryModel(this.Query, this.Parameters);
+        }
+
+        public QueryModel UpdateUser(UserEntity command)
+        {
+            this.Table = Map.GetTableUser();
+
+            this.Query = $@"
+                        UPDATE {this.Table}
+                        SET Name = @Name, Email = @Email, Password = @Password
+                        WHERE IdUser = @IdUser
+                        ";
+            
+            this.Parameters = new {
+                Name = command.Name,
+                Email = command.Email,
+                Password = command.Password
             };
 
             return new QueryModel(this.Query, this.Parameters);
