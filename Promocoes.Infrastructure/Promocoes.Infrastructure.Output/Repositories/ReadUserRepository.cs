@@ -32,5 +32,23 @@ namespace Promocoes.Infrastructure.Output.Repositories
                 throw new Exception("Não foi possivel coletar usuarios");
             }
         }
+
+        public UserDTO GetUserById(UserDTO user)
+        {
+            var query = new UserQueries().GetUserById(user);
+
+            try
+            {
+                using(_connection)
+                {
+                    return _connection.QueryFirstOrDefault<UserDTO>(query.Query, query.Parameters);
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
