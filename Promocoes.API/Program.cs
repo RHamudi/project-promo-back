@@ -1,4 +1,5 @@
 using System.Reflection;
+using AutoMapper;
 using Microsoft.VisualBasic;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Commands.ProductContext;
@@ -8,6 +9,7 @@ using Promocoes.Application.Input.Receivers.BusinessReceiver;
 using Promocoes.Application.Input.Repositories.Interfaces;
 using Promocoes.Application.Output.DTOs;
 using Promocoes.Application.Output.Interfaces;
+using Promocoes.Domain.Entities;
 using Promocoes.Infrastructure.Input.Repositories;
 using Promocoes.Infrastructure.Output.Repositories;
 using Promocoes.Infrastructure.Shared.Factory;
@@ -41,13 +43,13 @@ builder.Services.AddScoped<IWriteBusinessRepository, WriteBusinessRepository>();
 builder.Services.AddScoped<IAuthenticationRepository, AuthenticationRepository>();
 builder.Services.AddScoped<IWriteUserRepository, WriteUserRepository>();
 builder.Services.AddScoped<IReadUserRepository, ReadUserRepository>();
+builder.Services.AddAutoMapper(typeof(Program));
 
 builder.Services.AddOutputCache(options =>
     {
         options.AddPolicy("ProductsRefresh",builder => builder.Tag("products"));
         options.AddPolicy("BusinessRefresh",builder => builder.Tag("Business"));
         options.AddPolicy("PromotionRefresh",builder => builder.Tag("Promotion"));
-        
     }
     );
 
@@ -59,6 +61,17 @@ builder.Services.AddCors(options =>
             policy.WithOrigins("*").AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
         });
 });
+
+var configuration = new MapperConfiguration(cfg => 
+{
+    cfg.CreateMap<UserEntity, UserCommand>();
+});
+// only during development, validate your mappings; remove it before release
+#if DEBUG
+configuration.AssertConfigurationIsValid();
+#endif
+// use DI (http://docs.automapper.org/en/latest/Dependency-injection.html) or create the mapper yourself
+var mapper = configuration.CreateMapper();
 
 var app = builder.Build();
 
