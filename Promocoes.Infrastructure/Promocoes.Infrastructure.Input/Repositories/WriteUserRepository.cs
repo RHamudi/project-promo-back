@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Dapper;
+using Promocoes.Application.Input.Commands.UserContext;
 using Promocoes.Application.Input.Repositories.Interfaces;
 using Promocoes.Domain.Entities;
 using Promocoes.Infrastructure.Input.Queries;
@@ -32,6 +33,40 @@ namespace Promocoes.Infrastructure.Input.Repositories
                 }
             }
             catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public UserEntity GetUserById(Guid user)
+        {
+            var query = new UserQueries().GetUserById(user);
+
+            try
+            {
+                using(_connection)
+                {
+                    return _connection.QueryFirstOrDefault<UserEntity>(query.Query, query.Parameters);
+                }
+            }
+            catch (Exception ex)
+            {
+                
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public void UpdateUser(UserEntity user)
+        {
+            var query = new UserQueries().UpdateUser(user);
+
+            try
+            {
+                using(_connection)
+                {
+                    _connection.Query(query.Query, query.Parameters);
+                }
+            }catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
