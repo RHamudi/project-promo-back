@@ -48,7 +48,7 @@ namespace Promocoes.Infrastructure.Input.Queries
                             tb.Name,
                             tb.Email,
                             tb.Password,
-                            tb.IdBusiness 
+                            tb.IdBusiness
                         FROM
                             tb_users tb WHERE IdUser = @IdUser
                         ";

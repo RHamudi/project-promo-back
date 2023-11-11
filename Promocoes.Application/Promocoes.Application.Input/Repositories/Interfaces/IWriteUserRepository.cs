@@ -12,6 +12,6 @@ namespace Promocoes.Application.Input.Repositories.Interfaces
     {
         void InsertUser(UserEntity user);
         void UpdateUser(UserEntity user);
-        UserEntity GetUserById(Guid user);
+        UserByIdDTO GetUserById(Guid user);
     }
 }
