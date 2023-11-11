@@ -27,11 +27,19 @@ namespace Promocoes.Application.Input.Receivers.UserReceiver
             var userById = _repository.GetUserById(request.IdUser);
 
             if(userById == null)
-                return Task.FromResult(new State(400, "Usuario não encontrado", request));
+                return Task.FromResult(new State(400, "Usuario não encontrado", request.IdUser));
             
-            var userUpdated = _mapper.Map(userById, request);
 
-            return Task.FromResult(new State(200, "Update", userUpdated));
+            var userUpdated = _mapper.Map(request, userById);
+
+            try
+            {
+                //_repository.UpdateUser(userUpdated);
+                return Task.FromResult(new State(200, "Usuario atualizado com sucesso", userUpdated));
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
