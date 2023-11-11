@@ -38,7 +38,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
             }
         }
 
-        public UserEntity GetUserById(Guid user)
+        public UserByIdDTO GetUserById(Guid user)
         {
             var query = new UserQueries().GetUserById(user);
 
@@ -46,7 +46,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
             {
                 using(_connection)
                 {
-                    return _connection.QueryFirstOrDefault<UserEntity>(query.Query, query.Parameters);
+                    return _connection.QueryFirstOrDefault<UserByIdDTO>(query.Query, query.Parameters);
                 }
             }
             catch (Exception ex)
