@@ -64,7 +64,7 @@ builder.Services.AddCors(options =>
 
 var configuration = new MapperConfiguration(cfg => 
 {
-    cfg.CreateMap<UserEntity, UserCommand>();
+    cfg.CreateMap<UserByIdDTO, UserCommand>();
 });
 // only during development, validate your mappings; remove it before release
 #if DEBUG
