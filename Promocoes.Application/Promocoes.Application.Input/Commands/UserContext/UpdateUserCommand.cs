@@ -10,9 +10,9 @@ namespace Promocoes.Application.Input.Commands.UserContext
     public class UpdateUserCommand : IRequest<State>
     {
         public Guid IdUser { get; set; }
-        public string Name { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public Guid? IdEmpresa { get; set; }
+        public string? Name { get; set; }
+        public string? Email { get; set; }
+        public string? Password { get; set; }
+        public Guid? IdBusiness { get; set; }
     }
 }
