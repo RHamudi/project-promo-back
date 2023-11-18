@@ -7,19 +7,10 @@ namespace Promocoes.Application.Input.Commands.UserContext
 {
     public class UserByIdDTO
     {
-        public UserByIdDTO(string idUsuario, string nome, string email, string senha, string idEmpresa)
-        {
-            IdUsuario = idUsuario;
-            Nome = nome;
-            Email = email;
-            Senha = senha;
-            IdEmpresa = idEmpresa;
-        }
-
-        public string IdUsuario { get; set; }
-        public string Nome { get; set; }
+        public Guid IdUser { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
-        public string Senha { get; set; }
-        public string? IdEmpresa { get; set; }
+        public string Password { get; set; }
+        public Guid? IdBusiness { get; set; }
     }
 }
