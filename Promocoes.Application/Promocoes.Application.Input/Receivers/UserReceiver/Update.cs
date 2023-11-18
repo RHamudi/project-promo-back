@@ -29,8 +29,13 @@ namespace Promocoes.Application.Input.Receivers.UserReceiver
             if(userById == null)
                 return Task.FromResult(new State(400, "Usuario não encontrado", request.IdUser));
             
-
-            var userUpdated = _mapper.Map(request, userById);
+            UpdateUserCommand userUpdated = new() {
+                IdUser = request.IdUser,
+                Name = userById.Name != request.Name ? request.Name : userById.Name,
+                Email = userById.Email != request.Email ? request.Email : userById.Email,
+                Password = userById.Password != request.Password ? request.Password : userById.Password,
+                IdBusiness = userById.IdBusiness != request.IdBusiness ? request.IdBusiness : userById.IdBusiness 
+            };
 
             try
             {
