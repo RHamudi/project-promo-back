@@ -60,7 +60,7 @@ namespace Promocoes.Infrastructure.Input.Queries
             return new QueryModel(this.Query, this.Parameters);
         }
 
-        public QueryModel UpdateUser(UserEntity command)
+        public QueryModel UpdateUser(UpdateUserCommand command)
         {
             this.Table = Map.GetTableUser();
 
@@ -73,7 +73,8 @@ namespace Promocoes.Infrastructure.Input.Queries
             this.Parameters = new {
                 Name = command.Name,
                 Email = command.Email,
-                Password = command.Password
+                Password = command.Password,
+                IdUser = command.IdUser
             };
 
             return new QueryModel(this.Query, this.Parameters);
@@ -90,6 +91,7 @@ namespace Promocoes.Infrastructure.Input.Queries
                                 tb.Password as Senha
                             FROM
                             {this.Table} tb WHERE Email = '{command.Email}' AND Password = '{command.Password}'
+                            
                         
                           ";
 
