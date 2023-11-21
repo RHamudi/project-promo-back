@@ -56,7 +56,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
             }
         }
 
-        public void UpdateUser(UserEntity user)
+        public void UpdateUser(UpdateUserCommand user)
         {
             var query = new UserQueries().UpdateUser(user);
 
