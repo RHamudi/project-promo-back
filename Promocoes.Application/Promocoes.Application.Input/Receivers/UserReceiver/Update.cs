@@ -31,15 +31,15 @@ namespace Promocoes.Application.Input.Receivers.UserReceiver
             
             UpdateUserCommand userUpdated = new() {
                 IdUser = request.IdUser,
-                Name = userById.Name != request.Name ? request.Name : userById.Name,
-                Email = userById.Email != request.Email ? request.Email : userById.Email,
-                Password = userById.Password != request.Password ? request.Password : userById.Password,
-                IdBusiness = userById.IdBusiness != request.IdBusiness ? request.IdBusiness : userById.IdBusiness 
+                Name = request.Name != userById.Name & request.Name != null ? request.Name :  userById.Name, 
+                Email = request.Email != userById.Email & request.Email != null ? request.Email : userById.Email,
+                Password = request.Password != userById.Password  & request.Password != null ? request.Password : userById.Password,
+                IdBusiness = request.IdBusiness != userById.IdBusiness & request.IdBusiness != null ? request.IdBusiness : userById.IdBusiness 
             };
 
             try
             {
-                //_repository.UpdateUser(userUpdated);
+                _repository.UpdateUser(userUpdated);
                 return Task.FromResult(new State(200, "Usuario atualizado com sucesso", userUpdated));
             }catch(Exception ex)
             {
