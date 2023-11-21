@@ -11,7 +11,7 @@ namespace Promocoes.Application.Input.Repositories.Interfaces
     public interface IWriteUserRepository
     {
         void InsertUser(UserEntity user);
-        void UpdateUser(UserEntity user);
+        void UpdateUser(UpdateUserCommand user);
         UserByIdDTO GetUserById(Guid user);
     }
 }
