@@ -9,5 +9,6 @@ namespace Promocoes.Application.Output.Interfaces
     public interface IReadUserRepository
     {
         IEnumerable<UserDTO> GetAllUsers();
+        UserDTO GetUserById(Guid user);
     }
 }
