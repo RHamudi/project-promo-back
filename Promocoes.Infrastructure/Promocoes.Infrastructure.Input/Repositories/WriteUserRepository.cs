@@ -30,6 +30,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
                 using(_connection)
                 {
                     _connection.Query(query.Query, query.Parameters);
+                    _connection.Close();
                 }
             }
             catch (Exception ex)
@@ -44,9 +45,12 @@ namespace Promocoes.Infrastructure.Input.Repositories
 
             try
             {
+                UserByIdDTO retorno;
                 using(_connection)
                 {
-                    return _connection.QueryFirstOrDefault<UserByIdDTO>(query.Query, query.Parameters);
+                   retorno = _connection.QueryFirstOrDefault<UserByIdDTO>(query.Query, query.Parameters);
+                   _connection.Close();
+                   return retorno;
                 }
             }
             catch (Exception ex)
@@ -65,6 +69,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
                 using(_connection)
                 {
                     _connection.Query(query.Query, query.Parameters);
+                    _connection.Close();
                 }
             }catch (Exception ex)
             {
