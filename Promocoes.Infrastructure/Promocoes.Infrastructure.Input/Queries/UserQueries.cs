@@ -66,8 +66,8 @@ namespace Promocoes.Infrastructure.Input.Queries
 
             this.Query = $@"
                         UPDATE {this.Table}
-                        SET Name = @Name, Email = @Email, Password = @Password
-                        WHERE IdUser = @IdUser
+                        SET Name = '{command.Name}', Email = '{command.Email}', Password = '{command.Password}'
+                        WHERE IdUser = '{command.IdUser}'
                         ";
             
             this.Parameters = new {
@@ -77,7 +77,7 @@ namespace Promocoes.Infrastructure.Input.Queries
                 IdUser = command.IdUser
             };
 
-            return new QueryModel(this.Query, this.Parameters);
+            return new QueryModel(this.Query, null);
         }
 
         public QueryModel AuthenticationQuery(AuthenticationCommand command)
