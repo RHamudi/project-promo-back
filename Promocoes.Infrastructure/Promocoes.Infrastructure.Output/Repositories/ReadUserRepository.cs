@@ -33,7 +33,7 @@ namespace Promocoes.Infrastructure.Output.Repositories
             }
         }
 
-        public UserDTO GetUserById(UserDTO user)
+        public UserDTO GetUserById(Guid user)
         {
             var query = new UserQueries().GetUserById(user);
 
