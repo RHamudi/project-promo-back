@@ -36,7 +36,7 @@ namespace Promocoes.API.Controllers
             return Ok(result);
         }
 
-        [HttpPatch("update")]
+        [HttpPatch("updateuser")]
         public async Task<IActionResult> Update([FromBody] UpdateUserCommand command)
         {
             var result = await _mediator.Send(command);
