@@ -20,9 +20,9 @@ namespace Promocoes.Domain.Validations
 
         public BusinessValidations GuidIsValid()
         {
-            if(!Guid.TryParse(_business.IdBusiness, out Guid x))
+            if(!Guid.TryParse(_business.IdBusiness, out Guid x) & !Guid.TryParse(_business.IdUser, out Guid y))
                 _business.AddNotification(new Notification("IdBusiness", "Id invalido"));
-
+                
             return this;
         }
 
