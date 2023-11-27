@@ -7,6 +7,7 @@ namespace Promocoes.Application.Output.DTOs
     public class AllBusinessDTO : IRequest<State>
     {
         public Guid IdEmpresa { get;  set; }
+        public Guid IdUsuario { get; set; }
         public string Nome { get;  set; }
         public string Descricao { get;  set; }
         public string LogoImagem { get;  set; }
