@@ -25,7 +25,7 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
             var category = (ECategory)request.Category;
             var business = new BusinessEntity(request.Name, request.Description,
                 uploadImage.Result.Link, request.Location, contacts, category,
-                request.Operation, request.GeoData);
+                request.Operation, request.GeoData, request.IdUser);
 
             if(!business.IsValid())
                 return Task.FromResult(new State(400, "Erro ao inserir Empresa", business.Notifications));
