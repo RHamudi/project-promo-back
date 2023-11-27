@@ -26,6 +26,7 @@ namespace Promocoes.Infrastructure.Input.Queries
                                      @Category,
                                      @Operation,
                                      @Geodata,
+                                     @IdUser
                                  )
                                  
                      """;
@@ -42,6 +43,7 @@ namespace Promocoes.Infrastructure.Input.Queries
                 entity.Category,
                 entity.Operation,
                 Geodata = entity.GeoData,
+                IdUser = entity.IdUser
             };
 
             return new QueryModel(Query, Parameters);
