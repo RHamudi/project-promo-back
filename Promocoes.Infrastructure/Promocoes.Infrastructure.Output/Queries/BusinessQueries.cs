@@ -14,6 +14,7 @@ namespace Promocoes.Infrastructure.Output.Queries
 
             this.Query = $@"
             SELECT
+				tb.IdUser as IdUsuario,
 	            tb.IdBusiness as IdEmpresa,
 				tb.Name as Nome,
 				tb.Description as Descricao,
@@ -38,6 +39,7 @@ namespace Promocoes.Infrastructure.Output.Queries
 
 			this.Query = $@"
 			SELECT
+				tb.IdUser as IdUsuario,
 				tb.IdBusiness as IdEmpresa,
 				tb.Name as Nome,
 				tb.Description as Descricao,
