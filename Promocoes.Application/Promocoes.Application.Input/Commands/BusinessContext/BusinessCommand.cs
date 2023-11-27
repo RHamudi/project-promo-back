@@ -8,8 +8,8 @@ namespace Promocoes.Application.Input.Commands.BusinessContext
 {
     public class BusinessCommand : IRequest<State>
     {
+        public string IdUser { get; set; }
         public string Name { get;  set; }
-        public string Password { get;  set; }
         public string Description { get;  set; }
         public IFormFile Logo { get; set; }
         public string Location { get; set; }
@@ -19,7 +19,5 @@ namespace Promocoes.Application.Input.Commands.BusinessContext
         public int Category { get; set; }
         public string Operation { get; set; }
         public string GeoData { get; set; }
-        public bool IsAdmin { get; set; }
-
     }
 }
