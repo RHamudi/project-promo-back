@@ -35,7 +35,7 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
             }
             catch
             {
-                return Task.FromResult(new State(200, "Credenciais incorretas", null));
+                return Task.FromResult(new State(400, "Credenciais incorretas", null));
             }
             
         }
