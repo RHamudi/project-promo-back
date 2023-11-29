@@ -48,7 +48,12 @@ namespace Promocoes.API.Controllers
         public async Task<IActionResult> Authentication([FromBody] AuthenticationCommand model)
         {
             var result = await _mediator.Send(model);
-            return Ok(result);
+            if(result.StatusCode == 400)
+            {
+                return BadRequest(result);
+            } else {
+                return Ok(result);
+            }
         }
     }
 }
