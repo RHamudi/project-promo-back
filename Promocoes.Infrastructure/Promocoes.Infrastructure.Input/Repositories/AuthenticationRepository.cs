@@ -1,6 +1,7 @@
 using System.Data;
 using Dapper;
 using Promocoes.Application.Input.Commands.BusinessContext;
+using Promocoes.Application.Input.Commands.UserContext;
 using Promocoes.Application.Input.Repositories.Interfaces;
 using Promocoes.Infrastructure.Input.Queries;
 using Promocoes.Infrastructure.Shared.Factory;
@@ -16,7 +17,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
             _connection = SqlFactory.SqlFactoryConnection();
         }
         
-        public AuthenticationCommand Authentication(AuthenticationCommand command)
+        public AuthenticationDTO Authentication(AuthenticationCommand command)
         {
             var query = new UserQueries().AuthenticationQuery(command);
 
@@ -24,7 +25,7 @@ namespace Promocoes.Infrastructure.Input.Repositories
             {
                 using(_connection)
                 {
-                    return _connection.QueryFirstOrDefault<AuthenticationCommand>(query.Query);
+                    return _connection.QueryFirstOrDefault<AuthenticationDTO>(query.Query);
                 }
             }
             catch (Exception ex)
