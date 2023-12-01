@@ -27,7 +27,10 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
                 if (command != null)
                 {
                     var create = new CreateToken(request);
-                    return Task.FromResult(new State(200, "Usuario autenticado com sucesso", create.Token));
+                    return Task.FromResult(new State(200, "Usuario autenticado com sucesso", new {
+                        Authentication = create.Token,
+                        User = command
+                    }));
                 }
 
                 throw new Exception();
