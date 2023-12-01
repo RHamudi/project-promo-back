@@ -87,8 +87,11 @@ namespace Promocoes.Infrastructure.Input.Queries
             this.Query = $@"
 
                             SELECT
-                                tb.Email as  Email,
-                                tb.Password as Senha
+                                	tb.IdUser as IdUsuario,
+                                    tb.Name as Nome,
+                                    tb.Email as Email,
+                                    tb.Password as Senha,
+                                    tb.IdBusiness as IdEmpresa
                             FROM
                             {this.Table} tb WHERE Email = '{command.Email}' AND Password = '{command.Password}'
                             
