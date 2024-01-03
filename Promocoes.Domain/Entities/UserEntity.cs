@@ -23,6 +23,8 @@ namespace Promocoes.Domain.Entities
         public string Email { get; set; }
         public string Password { get; set; }
         public string IdBusiness { get; set; }
+        public string? VerificationToken { get; set; }
+        public DateTime? VerifietAt { get; set; }
 
         public bool IsValid()
         {
