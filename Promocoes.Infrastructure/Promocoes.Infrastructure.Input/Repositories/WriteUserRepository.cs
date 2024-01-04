@@ -76,5 +76,23 @@ namespace Promocoes.Infrastructure.Input.Repositories
                 throw new Exception(ex.Message);
             }
         }
+
+        public bool VerifyUser(VerificationCommand verify)
+        {
+            var query = new UserQueries().VerifyTokenQuery(verify.Token);
+
+            try
+            {
+                using(_connection)
+                {
+                    _connection.Query(query.Query, query.Parameters);
+                }
+                return true;
+            }catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+            
+        }
     }
 }
