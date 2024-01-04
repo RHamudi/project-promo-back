@@ -106,5 +106,20 @@ namespace Promocoes.Infrastructure.Input.Queries
 
             return new QueryModel(this.Query, this.Parameters);
         }
+
+        public QueryModel VerifyTokenQuery(string Token)
+        {
+            this.Table = Map.GetTableUser();
+
+            this.Query = $@"
+                            SELECT 
+                                *
+                            FROM
+                                tb_users tb 
+                            WHERE tb.VerificationToken = '{Token}'
+            ";
+
+            return new QueryModel(this.Query, null);
+        }
     }
 }

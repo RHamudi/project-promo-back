@@ -20,7 +20,7 @@ namespace Promocoes.Application.Input.Receivers.UserReceiver
 
         public Task<State> Handle(UserCommand request, CancellationToken cancellationToken)
         {
-            var user = new UserEntity(request.Name, request.Email, request.Password, request.IdBusiness);
+            var user = new UserEntity(request.Name, request.Email, request.Password, request.IdBusiness, null);
 
             if(!user.IsValid())
             {
