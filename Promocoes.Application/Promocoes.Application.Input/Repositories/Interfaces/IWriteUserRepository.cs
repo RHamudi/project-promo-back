@@ -14,5 +14,6 @@ namespace Promocoes.Application.Input.Repositories.Interfaces
         void UpdateUser(UpdateUserCommand user);
         UserByIdDTO GetUserById(Guid user);
         bool VerifyUser(VerificationCommand verify);
+        void UpdateUserDate(DateTime date, string token);
     }
 }

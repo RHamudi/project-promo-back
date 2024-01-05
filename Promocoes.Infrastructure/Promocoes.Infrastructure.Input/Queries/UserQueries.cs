@@ -121,5 +121,20 @@ namespace Promocoes.Infrastructure.Input.Queries
 
             return new QueryModel(this.Query, null);
         }
+
+        public QueryModel UpdateVerifyDate(DateTime date, string token)
+        {
+            this.Table = Map.GetTableUser();
+
+            this.Query = $@"
+                    UPDATE tb_users
+                    SET VerifietAt = {date}
+                    WHERE VerificationToken = {token}
+            ";
+            
+            this.Parameters = null;
+
+            return new QueryModel(this.Query, this.Parameters);
+        }
     }
 }

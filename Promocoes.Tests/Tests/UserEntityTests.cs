@@ -16,7 +16,8 @@ namespace Promocoes.Tests.Tests
 
         public UserEntityTests()
         {
-            _user = new UserEntity("Ramon", "ramonramos.silva19@gmail.com", "ramonramos9137", "");
+            var date = DateTime.Now;
+            _user = new UserEntity("Ramon", "ramonramos.silva19@gmail.com", "ramonramos9137", "", date);
             _validations = new UserValidations(_user);
         }
 

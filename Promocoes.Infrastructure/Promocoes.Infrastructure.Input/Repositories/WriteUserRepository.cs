@@ -92,7 +92,22 @@ namespace Promocoes.Infrastructure.Input.Repositories
             {
                 throw new Exception(ex.Message);
             }
-            
+        }
+
+        public void UpdateUserDate(DateTime date, string token)
+        {
+            var query = new UserQueries().UpdateVerifyDate(date, token);
+
+            try
+            {
+                using(_connection)
+                {
+                    _connection.Query(query.Query, query.Parameters);
+                }
+            }catch(Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
         }
     }
 }
