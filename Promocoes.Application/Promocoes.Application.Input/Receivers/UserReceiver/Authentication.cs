@@ -24,6 +24,7 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
             try
             {
                 var command = _repository.Authentication(request);
+                if(command.VerifietAt == null) return Task.FromResult(new State(401,"Usuario não verificado, por favor verifique seu email", null));
                 if (command != null)
                 {
                     var create = new CreateToken(request);

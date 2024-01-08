@@ -91,7 +91,9 @@ namespace Promocoes.Infrastructure.Input.Queries
                                     tb.Name as Nome,
                                     tb.Email as Email,
                                     tb.Password as Senha,
-                                    tb.IdBusiness as IdEmpresa
+                                    tb.IdBusiness as IdEmpresa,
+                                    tb.VerificationToken as Token,
+                                    tb.VerifietAt as Date
                             FROM
                             {this.Table} tb WHERE Email = '{command.Email}' AND Password = '{command.Password}'
                             
