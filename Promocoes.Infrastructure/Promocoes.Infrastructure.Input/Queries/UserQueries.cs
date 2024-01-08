@@ -128,8 +128,8 @@ namespace Promocoes.Infrastructure.Input.Queries
 
             this.Query = $@"
                     UPDATE tb_users
-                    SET VerifietAt = {date}
-                    WHERE VerificationToken = {token}
+                    SET VerifietAt = '{date}'
+                    WHERE VerificationToken = '{token}'
             ";
             
             this.Parameters = null;

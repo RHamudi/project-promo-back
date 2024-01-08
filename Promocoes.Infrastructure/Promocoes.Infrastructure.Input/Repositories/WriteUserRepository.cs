@@ -83,10 +83,10 @@ namespace Promocoes.Infrastructure.Input.Repositories
 
             try
             {
-                using(_connection)
-                {
+                    _connection.Open();
                     _connection.Query(query.Query, query.Parameters);
-                }
+                    _connection.Close();
+                
                 return true;
             }catch (Exception ex)
             {
@@ -100,10 +100,10 @@ namespace Promocoes.Infrastructure.Input.Repositories
 
             try
             {
-                using(_connection)
-                {
+                    _connection.Open();
                     _connection.Query(query.Query, query.Parameters);
-                }
+                    _connection.Close();
+                
             }catch(Exception ex)
             {
                 throw new Exception(ex.Message);
