@@ -23,7 +23,9 @@ namespace Promocoes.Infrastructure.Input.Queries
                 @Name,
                 @Email,
                 @Password,
-                @IdBusiness
+                @IdBusiness,
+                @VerificationToken,
+                @VerifietAt
             )
             ";
 
@@ -32,7 +34,9 @@ namespace Promocoes.Infrastructure.Input.Queries
                 Name = entity.Name,
                 Email = entity.Email,
                 Password = entity.Password,
-                IdBusiness = entity.IdBusiness.Length == 0 ? null : entity.IdBusiness 
+                IdBusiness = entity.IdBusiness.Length == 0 ? null : entity.IdBusiness,
+                VerificationToken = entity.VerificationToken,
+                VerifietAt = ""
             };
 
             return new QueryModel(this.Query, this.Parameters);
