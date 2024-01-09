@@ -11,8 +11,8 @@ namespace Promocoes.Application.Input.Commands.UserContext
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }
-        public string VerificationToken { get; set; }
-        public string VerifietAt { get; set; }
+        public string Token { get; set; }
+        public string Date { get; set; }
         public Guid? IdEmpresa { get; set; }
     }
 }
