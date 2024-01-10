@@ -13,7 +13,7 @@ namespace Promocoes.Application.Input.Repositories.Interfaces
         void InsertUser(UserEntity user);
         void UpdateUser(UpdateUserCommand user);
         UserByIdDTO GetUserById(Guid user);
-        bool VerifyUser(VerificationCommand verify);
+        VerifyTokenDTO VerifyUser(VerificationCommand verify);
         void UpdateUserDate(DateTime date, string token);
     }
 }

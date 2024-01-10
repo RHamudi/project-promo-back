@@ -14,6 +14,7 @@ namespace Promocoes.Application.Input.Services.SendEmail
             var mail = "ramonramos.silva@outlook.com";
             var pw = "ramonramos.";
 
+            
             var client = new SmtpClient("smtp-mail.outlook.com", 587)
             {
                 EnableSsl = true,

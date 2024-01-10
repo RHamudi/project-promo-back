@@ -119,7 +119,7 @@ namespace Promocoes.Infrastructure.Input.Queries
 
             this.Query = $@"
                             SELECT 
-                                *
+                                tb.VerificationToken 
                             FROM
                                 tb_users tb 
                             WHERE tb.VerificationToken = '{Token}'

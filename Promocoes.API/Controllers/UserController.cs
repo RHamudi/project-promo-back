@@ -57,7 +57,7 @@ namespace Promocoes.API.Controllers
         }
 
         [OutputCache(NoStore = true, Duration = 0)]
-        [HttpPost("VerifyUser")]
+        [HttpGet("VerifyUser")]
         public async Task<IActionResult> VerifyUser([FromQuery] VerificationCommand command)
         {
             var result = await _mediator.Send(command);

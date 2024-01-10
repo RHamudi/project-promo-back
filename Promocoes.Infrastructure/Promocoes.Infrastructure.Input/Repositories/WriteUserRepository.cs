@@ -77,17 +77,18 @@ namespace Promocoes.Infrastructure.Input.Repositories
             }
         }
 
-        public bool VerifyUser(VerificationCommand verify)
+        public VerifyTokenDTO VerifyUser(VerificationCommand verify)
         {
             var query = new UserQueries().VerifyTokenQuery(verify.Token);
 
             try
             {
+                    VerifyTokenDTO token;
                     _connection.Open();
-                    _connection.Query(query.Query, query.Parameters);
+                    token = _connection.QueryFirstOrDefault<VerifyTokenDTO>(query.Query, query.Parameters);
                     _connection.Close();
+                    return token;
                 
-                return true;
             }catch (Exception ex)
             {
                 throw new Exception(ex.Message);

@@ -21,7 +21,7 @@ namespace Promocoes.Application.Input.Receivers.UserReceiver
         {
             var verifyToken = _repository.VerifyUser(request);
 
-            if(!verifyToken)
+            if(verifyToken == null)
             {
                 return Task.FromResult(new State(400, "Token Invalido", null));
             }
