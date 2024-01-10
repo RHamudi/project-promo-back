@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Promocoes.Application.Input.Commands.UserContext;
 using Promocoes.Application.Input.Repositories.Interfaces;
+using Promocoes.Application.Input.Services.SendEmail;
 using Promocoes.Domain.Entities;
 
 namespace Promocoes.Application.Input.Receivers.UserReceiver
@@ -27,8 +28,10 @@ namespace Promocoes.Application.Input.Receivers.UserReceiver
                 return Task.FromResult(new State(400, "Não foi possivel adicionar usuario", user.Notifications));
             }
 
+            
             try
             {
+                var teste = ClientSmtp.SendEmail("hikic92971@ziragold.com", "testando", "Alou eu sou foda!");
                 _repository.InsertUser(user);
                 return Task.FromResult(new State(200, "Usuario inserido com sucesso", user));
             }
