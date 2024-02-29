@@ -7,7 +7,7 @@ namespace Promocoes.Infrastructure.Shared.Factory
     {
         public static IDbConnection SqlFactoryConnection()
         {
-            return new SqlConnection("Server=localhost;Database=promo_database;Uid=sa;Pwd=ramonramos;TrustServerCertificate=True;");
+            return new SqlConnection("Server=localhost;Database=promo_database;Trusted_Connection=True;TrustServerCertificate=True;");
         }
     }
 }
