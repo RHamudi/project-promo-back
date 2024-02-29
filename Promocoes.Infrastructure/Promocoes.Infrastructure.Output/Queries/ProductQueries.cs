@@ -39,7 +39,7 @@ namespace Promocoes.Infrastructure.Output.Queries
                 tp.Name as Nome,
                 tp.Description as Descricao,
                 tp.Images as Imagens,
-                tp.Price as Price
+                tp.Price as Preco
             FROM 
                 {this.Table} tp WHERE IdBusiness = @id
             ";
