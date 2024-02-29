@@ -36,7 +36,7 @@ namespace Promocoes.Infrastructure.Input.Queries
                 Password = entity.Password,
                 IdBusiness = entity.IdBusiness.Length == 0 ? null : entity.IdBusiness,
                 VerificationToken = entity.VerificationToken,
-                VerifietAt = ""
+                VerifietAt = entity.VerifietAt
             };
 
             return new QueryModel(this.Query, this.Parameters);
