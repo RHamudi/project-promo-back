@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Repositories\\project-promo-back\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9295DA9B-E74B-4A88-8697-E557C662DE96}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Output\\Promocoes.Infrastructure.Output.csproj|c:\\repositories\\project-promo-back\\promocoes.infrastructure\\promocoes.infrastructure.output\\repositories\\readuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9295DA9B-E74B-4A88-8697-E557C662DE96}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Output\\Promocoes.Infrastructure.Output.csproj|solutionrelative:promocoes.infrastructure\\promocoes.infrastructure.output\\repositories\\readuserrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|c:\\repositories\\project-promo-back\\promocoes.infrastructure\\promocoes.infrastructure.shared\\factory\\sqlfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|solutionrelative:promocoes.infrastructure\\promocoes.infrastructure.shared\\factory\\sqlfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|c:\\repositories\\project-promo-back\\promocoes.infrastructure\\promocoes.infrastructure.shared\\shared\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|solutionrelative:promocoes.infrastructure\\promocoes.infrastructure.shared\\shared\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9EEE82B5-3EE7-4B6D-BA8A-214AE8406D20}|Promocoes.Application\\Promocoes.Application.Output\\Promocoes.Application.Output.csproj|c:\\repositories\\project-promo-back\\promocoes.application\\promocoes.application.output\\receivers\\userreadreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9EEE82B5-3EE7-4B6D-BA8A-214AE8406D20}|Promocoes.Application\\Promocoes.Application.Output\\Promocoes.Application.Output.csproj|solutionrelative:promocoes.application\\promocoes.application.output\\receivers\\userreadreceiver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserReadReceiver.cs",
+              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.Application\\Promocoes.Application.Output\\Receivers\\UserReadReceiver.cs",
+              "RelativeDocumentMoniker": "Promocoes.Application\\Promocoes.Application.Output\\Receivers\\UserReadReceiver.cs",
+              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.Application\\Promocoes.Application.Output\\Receivers\\UserReadReceiver.cs",
+              "RelativeToolTip": "Promocoes.Application\\Promocoes.Application.Output\\Receivers\\UserReadReceiver.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAUwBUAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T11:56:26.547Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReadUserRepository.cs",
+              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Output\\Repositories\\ReadUserRepository.cs",
+              "RelativeDocumentMoniker": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Output\\Repositories\\ReadUserRepository.cs",
+              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Output\\Repositories\\ReadUserRepository.cs",
+              "RelativeToolTip": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Output\\Repositories\\ReadUserRepository.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAUwBMAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T11:56:26.554Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SqlFactory.cs",
+              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "RelativeDocumentMoniker": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "RelativeToolTip": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAwAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T11:56:26.559Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Map.cs",
+              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Shared\\Map.cs",
+              "RelativeDocumentMoniker": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Shared\\Map.cs",
+              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Shared\\Map.cs",
+              "RelativeToolTip": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Shared\\Map.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-21T10:25:04.659Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

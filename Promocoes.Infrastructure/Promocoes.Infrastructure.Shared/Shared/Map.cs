@@ -4,21 +4,21 @@ namespace Promocoes.Infrastructure.Shared.Shared
     {
         public static string GetTableUser()
         {
-            return "[tb_users]";
+            return "tb_users";
         }
         public static string GetTableBusiness()
         {
-            return "[tb_business]";
+            return "tb_business";
         }
 
         public static string GetTableProduct()
         {
-            return "[tb_product]";
+            return "tb_product";
         }
 
         public static string GetTablePromotion()
         {
-            return "[tb_promotion]";
+            return "tb_promotion";
         }
     }
 }

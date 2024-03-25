@@ -27,9 +27,9 @@ namespace Promocoes.Infrastructure.Output.Repositories
                     return _connection.Query<UserDTO>(query.Query, query.Parameters);
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                throw new Exception("Não foi possivel coletar usuarios");
+                throw new Exception(ex.Message);
             }
         }
 
