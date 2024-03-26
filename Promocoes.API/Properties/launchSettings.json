@@ -14,7 +14,7 @@
       "dotnetRunMessages": true,
       "launchBrowser": true,
       "launchUrl": "swagger",
-      "applicationUrl": "http://18.189.176.238:3001",
+      "applicationUrl": "http://0.0.0.0:80",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
@@ -36,6 +36,14 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+    },
+    "Kestrel": {
+      "EndPoints": {
+        "Http": {
+          "Url": "http://localhost:3000"
+        }
+      }
     }
   }
+  
 }

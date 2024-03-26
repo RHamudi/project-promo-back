@@ -24,7 +24,7 @@ builder.WebHost.ConfigureKestrel((context, serverOptions) =>
     serverOptions.Configure(kestrelSection)
         .Endpoint("Http", listenOptions =>
         {
-            // ...
+            
         });
 });
 
