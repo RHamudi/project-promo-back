@@ -18,6 +18,16 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
+builder.WebHost.ConfigureKestrel((context, serverOptions) =>
+{
+     var kestrelSection = context.Configuration.GetSection("Kestrel");
+    serverOptions.Configure(kestrelSection)
+        .Endpoint("Http", listenOptions =>
+        {
+            // ...
+        });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
