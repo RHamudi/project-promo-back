@@ -19,21 +19,6 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-builder.WebHost.ConfigureKestrel((context, serverOptions) =>
-{
-    // Configuração do endpoint HTTP
-    serverOptions.Listen(IPAddress.Parse("3.143.14.147"), 3001, listenOptions =>
-    {
-        // Configurações adicionais, se necessário
-    });
-
-    // Configuração do endpoint HTTPS (opcional)
-    serverOptions.Listen(IPAddress.Parse("3.143.14.147"), 80, listenOptions =>
-    {
-        //onfigurações adicionais, se necessário
-    });
-});
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
