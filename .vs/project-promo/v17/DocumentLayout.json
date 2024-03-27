@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Repositories\\project-promo-back\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}|Promocoes.API\\Promocoes.API.csproj|c:\\repositories\\project-promo-back\\promocoes.api\\storage\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}|Promocoes.API\\Promocoes.API.csproj|solutionrelative:promocoes.api\\storage\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}|Promocoes.API\\Promocoes.API.csproj|c:\\repositories\\project-promo-back\\promocoes.api\\storage\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}|Promocoes.API\\Promocoes.API.csproj|solutionrelative:promocoes.api\\storage\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|c:\\repositories\\project-promo-back\\promocoes.infrastructure\\promocoes.infrastructure.shared\\factory\\sqlfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|solutionrelative:promocoes.infrastructure\\promocoes.infrastructure.shared\\factory\\sqlfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,27 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.API\\Storage\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Promocoes.API\\Storage\\appsettings.Development.json",
-              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.API\\Storage\\appsettings.Development.json",
-              "RelativeToolTip": "Promocoes.API\\Storage\\appsettings.Development.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-26T19:10:27.474Z",
+              "Title": "SqlFactory.cs",
+              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "RelativeDocumentMoniker": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "RelativeToolTip": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-26T19:46:43.169Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.API\\Storage\\appsettings.json",
-              "RelativeDocumentMoniker": "Promocoes.API\\Storage\\appsettings.json",
-              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.API\\Storage\\appsettings.json",
-              "RelativeToolTip": "Promocoes.API\\Storage\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-03-26T19:08:46.331Z"
             }
           ]
         }

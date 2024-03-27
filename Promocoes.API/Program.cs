@@ -1,3 +1,4 @@
+using System.Net;
 using System.Reflection;
 using AutoMapper;
 using Microsoft.VisualBasic;
@@ -20,12 +21,17 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.WebHost.ConfigureKestrel((context, serverOptions) =>
 {
-     var kestrelSection = context.Configuration.GetSection("Kestrel");
-    serverOptions.Configure(kestrelSection)
-        .Endpoint("Http", listenOptions =>
-        {
-            
-        });
+    // Configuração do endpoint HTTP
+    serverOptions.Listen(IPAddress.Parse("3.143.14.147"), 3001, listenOptions =>
+    {
+        // Configurações adicionais, se necessário
+    });
+
+    // Configuração do endpoint HTTPS (opcional)
+    serverOptions.Listen(IPAddress.Parse("3.143.14.147"), 80, listenOptions =>
+    {
+        // Configurações adicionais, se necessário
+    });
 });
 
 builder.Services.AddControllers();
