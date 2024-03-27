@@ -22,13 +22,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.WebHost.ConfigureKestrel((context, serverOptions) =>
 {
     // Configuração do endpoint HTTP
-    serverOptions.Listen(IPAddress.Parse("3.143.14.147"), 3001, listenOptions =>
+    serverOptions.Listen(IPAddress.Parse("172.31.10.165"), 3001, listenOptions =>
     {
         // Configurações adicionais, se necessário
     });
 
     // Configuração do endpoint HTTPS (opcional)
-    serverOptions.Listen(IPAddress.Parse("3.143.14.147"), 80, listenOptions =>
+    serverOptions.Listen(IPAddress.Parse("172.31.10.165"), 80, listenOptions =>
     {
         // Configurações adicionais, se necessário
     });
