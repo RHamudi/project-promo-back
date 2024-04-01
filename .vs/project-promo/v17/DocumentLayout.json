@@ -1,12 +1,54 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Repositories\\project-promo-back\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|c:\\repositories\\project-promo-back\\promocoes.infrastructure\\promocoes.infrastructure.shared\\factory\\sqlfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{688A7337-FE78-4DD6-AEBD-36625A1731C3}|Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Promocoes.Infrastructure.Shared.csproj|solutionrelative:promocoes.infrastructure\\promocoes.infrastructure.shared\\factory\\sqlfactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}|Promocoes.API\\Promocoes.API.csproj|c:\\repositories\\project-promo-back\\promocoes.api\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{B20C9ADE-3AC1-4526-B929-76DDA66AAEDD}|Promocoes.API\\Promocoes.API.csproj|solutionrelative:promocoes.api\\.env||{8B382828-6202-11D1-8870-0000F87579D2}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SqlFactory.cs",
+              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "RelativeDocumentMoniker": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "RelativeToolTip": "Promocoes.Infrastructure\\Promocoes.Infrastructure.Shared\\Factory\\SqlFactory.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T14:39:03.033Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": ".env",
+              "DocumentMoniker": "C:\\Repositories\\project-promo-back\\Promocoes.API\\.env",
+              "RelativeDocumentMoniker": "Promocoes.API\\.env",
+              "ToolTip": "C:\\Repositories\\project-promo-back\\Promocoes.API\\.env",
+              "RelativeToolTip": "Promocoes.API\\.env",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2024-04-01T14:37:38.652Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
