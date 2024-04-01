@@ -1,5 +1,7 @@
+using System.Net;
 using System.Reflection;
 using AutoMapper;
+using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.VisualBasic;
 using Promocoes.Application.Input.Commands.BusinessContext;
 using Promocoes.Application.Input.Commands.ProductContext;
@@ -17,6 +19,11 @@ using Promocoes.Infrastructure.Shared.Factory;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+builder.Services.Configure<ForwardedHeadersOptions>(options =>
+{
+    options.ForwardedHeaders =
+        ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto;
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -83,6 +90,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseForwardedHeaders();
 
 app.UseOutputCache();
 
