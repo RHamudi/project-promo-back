@@ -5,3 +5,4 @@ obj/
 .vscode/
 publish_output/
 .env
+.vs/
