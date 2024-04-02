@@ -20,8 +20,11 @@ namespace Promocoes.Application.Output.Receivers
         public Task<State> Handle(ByIdBusinessDTO request, CancellationToken cancellationToken)
         {
             var getBusiness = _repository.GetBusinessById(request.IdEmpresa);
-
-            return Task.FromResult(new State(200, "Empresa coletada com sucesso", getBusiness));
+            if(getBusiness.IsError == true)
+            {
+                return Task.FromResult(new State(400, getBusiness.Errors[0].Description, null));
+            }
+            return Task.FromResult(new State(200, "Empresa coletada com sucesso", getBusiness.Value));
         }
     }
 }
