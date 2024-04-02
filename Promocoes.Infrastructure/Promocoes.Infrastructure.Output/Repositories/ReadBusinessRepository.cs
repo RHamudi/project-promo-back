@@ -1,5 +1,7 @@
+using System.ComponentModel;
 using System.Data;
 using Dapper;
+using ErrorOr;
 using Promocoes.Application.Output.DTOs;
 using Promocoes.Application.Output.Interfaces;
 using Promocoes.Domain.ValueObjects;
@@ -17,7 +19,7 @@ namespace Promocoes.Infrastructure.Output.Repositories
             _connection = SqlFactory.SqlFactoryConnection();
         }
 
-        public IEnumerable<AllBusinessDTO> GetAllBusiness()
+        public ErrorOr<IEnumerable<AllBusinessDTO>> GetAllBusiness()
         {
             var query = new BusinessQueries().GetAllBusinessQuery();
 
@@ -30,16 +32,16 @@ namespace Promocoes.Infrastructure.Output.Repositories
                     business.Contatos = contacts;
                     return business;
                   },
-                  splitOn: "Email");
+                  splitOn: "Email").ToErrorOr();
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                throw new Exception($@"Erro ao buscar empresas: {ex.Message}");
+                return Error.NotFound($@"Erro ao buscar empresas:");
             }
         }
 
-        public AllBusinessDTO GetBusinessById(Guid idEmpresa)
+        public ErrorOr<AllBusinessDTO> GetBusinessById(Guid idEmpresa)
         {
             var query = new BusinessQueries().GetByIdBusinessQuery(idEmpresa);
 
@@ -55,9 +57,9 @@ namespace Promocoes.Infrastructure.Output.Repositories
                   splitOn: "Email").First();
                 }
             }
-            catch(Exception ex)
+            catch
             {
-                throw new Exception($@"Erro ao buscar empresa: {ex.Message}");
+                return Error.NotFound(description: "Ocorreu um erro ao buscar empresa");
             }
         }
     }
