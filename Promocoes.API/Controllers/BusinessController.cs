@@ -41,6 +41,7 @@ namespace Promocoes.API.Controllers
         public async Task<IActionResult> GetById([FromQuery] string idEmpresa)
         {
             var result = await _mediator.Send(new ByIdBusinessDTO(idEmpresa));
+            if (result.StatusCode == 400) return BadRequest(result);
             return Ok(result);
         }
 
