@@ -25,12 +25,12 @@ namespace Promocoes.Infrastructure.Input.Repositories
             {
                 using(_connection)
                 {
-                    _connection.Execute(query.Query, query.Parameters);
+                     _connection.Execute(query.Query, query.Parameters);
                 }
             }
-            catch (Exception ex)
+            catch
             {
-                throw new Exception($"Erro interno: {ex.Message}");
+                throw new Exception();
             }
         }
 
