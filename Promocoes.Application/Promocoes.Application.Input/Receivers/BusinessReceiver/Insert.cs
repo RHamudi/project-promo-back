@@ -35,9 +35,9 @@ namespace Promocoes.Application.Input.Receivers.BusinessReceiver
                 _repository.InsertBusiness(business);
                 return Task.FromResult(new State(200, "Empresa adicionada com sucesso", business));
             }
-            catch(Exception ex)
+            catch
             {
-                return Task.FromResult(new State(500, ex.Message, null));
+                return Task.FromResult(new State(500, "Erro Inesperado", null));
             }
         }
     }
