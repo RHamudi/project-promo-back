@@ -10,7 +10,7 @@ using Promocoes.Infrastructure.Shared.Factory;
 
 namespace Promocoes.Infrastructure.Output.Repositories
 {
-    public class ReadBusinessRepository :  IReadBusinessRepository
+    public class ReadBusinessRepository : IReadBusinessRepository
     {
         private readonly IDbConnection _connection;
 

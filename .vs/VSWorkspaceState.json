@@ -2,8 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\Promocoes.API",
-    "\\Promocoes.Domain",
-    "\\Promocoes.Domain\\Entities"
+    "\\Promocoes.Application\\Promocoes.Application.Output"
   ],
   "SelectedNode": "\\Promocoes.API\\Promocoes.API.csproj",
   "PreviewInSolutionExplorer": false
