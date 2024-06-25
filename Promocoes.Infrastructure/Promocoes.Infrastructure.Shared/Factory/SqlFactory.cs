@@ -13,8 +13,8 @@ namespace Promocoes.Infrastructure.Shared.Factory
             DotNetEnv.Env.Load();
             DotNetEnv.Env.TraversePath().Load();
   
-            var apiKey = Environment.GetEnvironmentVariable("SQL_LOCALHOST");
-            return new SqlConnection(apiKey);
+            var apiKey = Environment.GetEnvironmentVariable("SQL_COCKROACHDB");
+            return new NpgsqlConnection(apiKey);
         }
     }
 }

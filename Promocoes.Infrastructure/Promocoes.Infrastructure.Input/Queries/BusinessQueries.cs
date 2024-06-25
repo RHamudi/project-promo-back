@@ -10,7 +10,7 @@ namespace Promocoes.Infrastructure.Input.Queries
         {
             Table = Map.GetTableBusiness();
 
-            Query = $"""
+            Query = @$" 
                      
                                  INSERT INTO {Table}
                                  VALUES
@@ -29,7 +29,7 @@ namespace Promocoes.Infrastructure.Input.Queries
                                      @IdUser
                                  )
                                  
-                     """;
+                     ";
 
             Parameters = new {
                 entity.IdBusiness,
